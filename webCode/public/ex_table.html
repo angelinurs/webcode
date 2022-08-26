@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		table {
+			border: 1px solid black;
+			border-collapse: collapse;
+			width: 500px;
+		}
+		tr{
+			border: 1px solid black;
+		}
+		td{
+			padding: 5px;
+			text-align: center;
+		}
+	</style>
+	
+	 <link href="https://vjs.zencdn.net/7.20.2/video-js.css" rel="stylesheet" />
+
+  <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+  <!-- <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script> -->
+</head>
+<body>
+	<header>
+		<h1> ex table</h1>
+	</header>
+	<article>
+		<table border="1">
+			<caption> Test table </caption>
+			<colgroup>
+				<col span="2" style="background-color: yellow;">
+				<col style="background-color: red;">
+			</colgroup>
+			<thead style="background-color: orange;">
+				<tr>
+					<th>emp_no</th>
+					<th>name</th>
+					<th>birth</th>
+					<th>gender</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>45</td>
+					<td><del>김밥지옥</del></td>
+					<td>6666.66.66</td>
+					<td>bi</td>
+				</tr>
+				<tr>
+					<td>45</td>
+					<td>김밥지옥</td>
+					<td>6666.66.66</td>
+					<td>bi</td>
+				</tr>
+				<tr>
+					<td>45</td>
+					<td>김밥지옥</td>
+					<td>6666.66.66</td>
+					<td>bi</td>
+				</tr>
+			</tbody>
+			<tfoot style="background-color: green;">
+				<tr>
+					<td>null..</td>
+					<td>null..</td>
+					<td>null..</td>
+					<td>null..</td>
+				</tr>
+			</tfoot>
+			
+		</table>
+		
+		<br />
+		<table width="500px">
+			<thead>
+				<tr>
+					<th>emp_no</th>
+					<th>name</th>
+					<th>birth</th>
+					<th>gender</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>45</td>
+					<td colspan="2">김밥지옥</td>
+					<td rowspan="3">bi</td>
+				</tr>
+				<tr>
+					<td colspan="2" rowspan="2">45</td>
+					<td>6666.66.66</td>
+				</tr>
+				<tr>
+					<td>6666.66.66</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td>null..</td>
+					<td>null..</td>
+					<td>null..</td>
+					<td>null..</td>
+				</tr>
+			</tfoot>
+			
+		</table>
+		<br />
+		<ruby>
+			<span>天高馬肥</span>
+			<rp>(</rp>
+			<rt>천고마비</rt>
+			<rp>)</rp>
+		</ruby>
+		<br />
+		<food> 붕어빵 </food>
+		<br />
+		<audio src="audio/fantasy-classical-themes-6123.mp3" controls autoplay></audio>
+		<br />
+		<audio controls>
+			<source src="audio/epic_battle_music_1-6275.mp3" type="audio/mp3" />
+			<source src="audio/epic_battle_music_1-6275.ogg" type="audio/ogg" />
+		</audio>
+		<br />
+		<video poster="http://placehold.it/300x300"
+			   width="320" height="240"
+			   controls="controls" autoplay >
+			   <source src="video/Orca_Uses_Bait_To_Hunt_Bird.mp4" type="video/mp4">
+		</video>
+		<br />
+		
+		<video
+		    id="my-video"
+		    class="video-js"
+		    controls
+		    preload="auto"
+		    width="640"
+		    height="264"
+		    poster="http://placehold.it/300x300"
+		    data-setup="{}"
+		>
+	    <source src="video/Orca_Uses_Bait_To_Hunt_Bird.mp4" type="video/mp4" />
+	    <source src="MY_VIDEO.webm" type="video/webm" />
+	    <p class="vjs-no-js">
+	      To view this video please enable JavaScript, and consider upgrading to a
+	      web browser that
+	      <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+    </p>
+  </video>
+
+  <script src="https://vjs.zencdn.net/7.20.2/video.min.js"></script>
+	</article>
+
+</body>
+</html>

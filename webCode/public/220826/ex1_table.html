@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">/* html4 형식 */
+	table{
+		width: 500px;
+		border-collapse: collapse;
+		border: none;
+	}
+	td,th{
+		border: 1px solid black;
+	}
+	#btn{ /* 아이디가 btn인 태그를 만나면 수행하는 곳 */
+		text-align: right;
+		border: none;
+	}
+</style>
+</head>
+<body>
+	<div>
+		<header>
+			<h1>DIV태그란?</h1>
+		</header>
+		<p>
+			div태그는 블록레벨의 대표적인 태그다. 하나의 영역을 구분할 때 사용된다.
+		</p>
+	</div>
+	<div>
+		<article>
+			
+			<table border="1">
+				<caption>테이블 제목(CSS에서 숨기는 것이 통상적인 예다.)</caption>
+				<colgroup>
+					<col width="60px"/>
+					<col width="120px"/>
+					<col width="*"/>
+					<col width="50px"/>
+				</colgroup>
+				<thead>
+					<tr>
+						<td colspan="4" id="btn">
+							<input type="button" value="버튼"/>
+						</td>
+					</tr>
+					<tr>
+						<th>사번</th>
+						<th>이름</th>
+						<th>생일</th>
+						<th>성별</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>10001</td>
+						<td>홍길동</td>
+						<td>1999-12-31</td>
+						<td>F</td>
+					</tr>
+					<tr>
+						<td>10201</td>
+						<td>을불</td>
+						<td>1909-02-31</td>
+						<td>M</td>
+					</tr>
+				</tbody>
+			</table>
+		</article>
+	</div>
+</body>
+</html>

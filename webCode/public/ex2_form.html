@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<style>
+			table {
+				border: 0px;
+				border-collapse: collapse;
+			}
+			
+			table th {
+				/*
+				border: 1px solid black;
+				*/
+				border-bottom: 1px solid black;
+				background-color: orange;
+			}
+			
+			td {
+				/*
+				border: 1px solid black;
+				*/
+				border-bottom: 1px dashed black;
+			}
+			
+			table>tfoot td {
+				text-align: center;
+			}
+			
+		</style>
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<header> 
+			<h1> form 알아보기</h1>
+		</header>
+		<section>
+			<article>
+				<form action="" method="get">
+					<table>
+						<colgroup>
+							<col width="120px" />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>
+									<label for="user_id" > id </label>
+								</th>
+								<td>
+									<input type="text" id="user_id" name="uid"/>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									<label for="pwd" > password </label>
+								</th>
+								<td>
+									<input type="password" id="pwd" name="upwd"/>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									<label for="pwd2" > retry password </label>
+								</th>
+								<td>
+									<input type="password" id="pwd2" name="upwd2"/>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									<label for="user_name" > name </label>
+								</th>
+								<td>
+									<input type="text" id="user_name" name="uname"/>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									<label for="user_home" > home </label>
+								</th>
+								<td>
+									<select id="user_home" name="uhome" >
+										<option value="경기도">경기도</option>
+										<option value="인천">인천</option>
+										<option value="서울">서울</option>
+										<option selected="selected">choose one</option>
+										
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									<!--
+										same name attribute elements are treated to array 
+									 -->
+									<label for="user_hobby" > hobby </label>
+								</th>
+								<td>
+									<input type="checkbox" id="user_hobby" name="uhobby" value="book" /> book
+									<input type="checkbox" id="user_hobby2" name="uhobby" value="movie" /> movie
+									<input type="checkbox" id="user_hobby3" name="uhobby" value="music" /> music
+									<input type="checkbox" id="user_hobby4" name="uhobby" value="game" /> game
+								</td>
+							</tr>
+							<tr>
+								<th>
+									<label for="user_gender" > gender </label>
+								</th>
+								<td>
+									<input type="radio" id="user_gender" name="ugender" value="female" /> female
+									<input type="radio" id="user_gender2" name="ugender" value="male" /> male
+								</td>
+							</tr>
+							<tr>
+								<th>
+									<label for="user_phone" > phone </label>
+								</th>
+								<td>
+									<select id="user_phone" name="uphone" >
+										<option value="010">010</option>
+										<option value="011">011</option>
+										<option value="017">017</option>
+									</select>
+									
+									<label >-</label>
+									<input id="user_phone2" name="uphone" />
+									<label >-</label>
+									<input id="user_phone3" name="uphone" />
+									<button type="button"> check authentification</button>
+								</td>
+							</tr>
+							<tr>
+								<th>
+									<label for="user_comment" > comment </label>
+								</th>
+								<td>
+									<textarea rows="5" cols="50" id="user_comment" name="ucommnet">Comment :</textarea>
+								</td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td colspan="2" >
+									<input type="button" value="sign up" />
+									<input type="reset" value="retry" />
+								</td>
+							</tr>
+						</tfoot>
+					</table>
+					
+				</form>
+			</article>
+		</section>
+	</body>
+</html>

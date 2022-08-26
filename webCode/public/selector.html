@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		
+		<style>
+			a:hover {
+				color: green;
+			}
+			a:active {
+				color: orange;
+			}
+			
+			ul#my_menu {
+				overflow: hidden;
+			}
+			
+			#my_menu li {
+				list-style: none; /* list item 앞에 `.` 삭제 */
+				float: left;
+				padding: 15px;
+				border: 1px dashed red;
+				margin-right: 0;
+			}
+			
+			#my_menu li:first-child {
+				border-radius: 50px 0px 0px 10px;
+			}
+			
+			#my_menu li:last-child {
+				border-radius: 0px 50px 10px 0px;
+			}
+			
+			#my_menu li:nth-child( 2n ) {
+				background-color: orange;
+			}
+			
+			#my_menu li:nth-child( 2n+1) {
+				background-color: yellow;
+			}
+			
+			article#third {
+				width: 200px;
+				height: 200px;
+				background-image: url(images/monkey.png);
+				/* background-repeat: no-repeat; */
+				/* background-position: left; */
+				background-size: 50px;
+			}
+			
+			#menu {
+				list-style: none; /* list item 앞에 `.` 삭제 */
+				width: 200px;
+				padding: 0;
+				margin-right: 0;
+				border-top: 2px solid black;
+			}
+			
+			#menu>li {
+				border: 2px solid black;
+				height: 58px;
+				width: 196px;
+				text-align: center;
+				border-top: none;
+				background-color: #00bfff;
+				
+			}
+			
+			#menu>li a {
+				display: block; /* inline level tag convert to block level*/
+				width: 100%;
+				height: 100%;
+				line-height: 58px; /* text height */
+				text-decoration: none; /* link underline remove */
+				font-size: 30px;
+				font-weight: bold;
+				/* color: #000; */
+				
+			}
+			
+			#menu #mail {
+				background-image: url( images/mail.gif );
+				background-size: 200%;
+				background-repeat: no-repeat;
+				
+			}
+			#menu #cafe {
+				background-image: url( images/cafe.gif );
+				background-size: 200%;
+				background-repeat: no-repeat;
+			}
+			#menu #blog {
+				background-image: url( images/blog.gif );
+				background-size: 200%;
+				background-repeat: no-repeat;
+			}
+			#menu #kin {
+				background-image: url( images/kin.gif );
+				background-size: 200%;
+				background-repeat: no-repeat;
+			}
+			
+			#menu>li>a:hover {
+				background-position: right top;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<section>
+			<article>
+				<a href=""> mouse hover here</a>
+			</article>
+		</section>
+		
+		<section>
+			<article>
+				<ul id="my_menu">
+					<li>first</li>
+					<li>second</li>
+					<li>third</li>
+					<li>fourth</li>
+					<li>fifth</li>
+					<li>sixth</li>
+				</ul>
+			</article>
+		</section>
+		
+		<section>
+			<article id="third">
+				<img alt="" src="images/whale.png" width=100px height="100px">
+			</article>
+		</section>
+		
+		<section>
+			<nav>
+				<h1> horizontal menu</h1>
+				<ul id="menu">
+					<li>
+						<a href="https://mail.naver.com" id="mail"></a>
+					</li>
+					<li>
+						<a href="https://cafe.naver.com" id="cafe"></a>
+					</li>
+					<li>
+						<a href="https://blog.naver.com" id="blog"></a>
+					</li>
+					<li>
+						<a href="https://kin.naver.com" id="kin"></a>
+					</li>
+	
+				</ul>
+			</nav>
+		</section>
+	
+	
+	</body>
+</html>

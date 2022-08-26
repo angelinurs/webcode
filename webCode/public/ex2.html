@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<style>
+			table {
+				width: 500px;
+				border-collapse: collapse;
+			}
+			td, th  {
+				border: 1px solid blue;
+				text-align: center;
+			}
+			#head-btn {
+				text-align: right;
+				background-color: white;
+				border: 0px;
+			}
+		</style>
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<div>
+			<header>
+				<h1> DIV tag?</h1>
+			</header>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultrices sapien ipsum, eu ullamcorper magna venenatis id. Etiam sit amet vestibulum lectus, quis ornare augue. Morbi aliquam fringilla nisi, a feugiat neque sagittis in. Pellentesque scelerisque ac lorem in dapibus. Duis gravida fermentum sapien. Nulla dapibus erat risus, nec convallis augue commodo vel. Aenean viverra porttitor leo vel blandit. Nam vitae nunc quis lectus placerat venenatis.
+			</p>
+		</div>
+		<div>
+			<table>
+				<caption hidden="true">Employee Table ( 일반적으로 숨긴다. )</caption>
+				<colgroup>
+					<!-- 
+					<col span="4" width="100px"/>
+					 -->
+					 <!-- 
+					 <col width="60xp" />
+					 <col width="120xp" />
+					 <col width="*" />
+					 <col width="50px" />
+					  -->
+					 <col width="20%" />
+					 <col width="20%" />
+					 <col width="*" />
+					 <col width="10%" />
+				</colgroup>
+				<thead style="background-color: orange;">
+					<tr>
+						<td colspan="4" id="head-btn">
+							<input type="button" value="button" />
+						</td>
+					</tr>
+					<tr>
+						<th>emp_no</th>
+						<th>name</th>
+						<th>birth</th>
+						<th>gender</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>10001</td>
+						<td>nameless</td>
+						<td>9999-09-09</td>
+						<td>F</td>
+					</tr>
+				</tbody>
+				<tfoot>
+				</tfoot>
+				
+				
+			</table>
+		</div>
+	
+	</body>
+</html>

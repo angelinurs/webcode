@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		
+		<style>
+			div#popup {
+				width: 250px;
+				height: 150px;
+				border: 1px solid black;
+				background: rgba( 100, 120, 150, 0.4 );
+				position: absolute;
+				top: 110px;
+				left: 350px;
+				
+				display: none;
+			}
+			
+			div#bar {
+				width: 100%;
+				height: 20px;
+				border-bottom: 1px solid #000;
+				background-color: #06a;
+				text-align: right;
+			}
+			
+			div#exit-area {
+				display: inline-block;
+				width: 16px;
+				height: 16px;
+				position: relative;
+				right: 0px;
+			}
+			
+			div#exit-area>a{
+				display: block;
+				width: 100%;
+				height: 100%;
+				background-image: url( images_2/exit.png );
+				background-repeat: no-repeat;
+				background-size: 16px;
+				font-size: 0px;
+				
+				position: absolute;
+				top: 0px;
+				right: 0px;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div id="wrap">
+			<header>
+				<h1>position exercise</h1>
+			</header>
+			<article>
+				<button type="button" onclick="exe();">Pop up</button>
+			</article>
+		</div>
+		
+		<!-- make pop up layer -->
+		<div id="popup">
+			<div id="bar">
+				<div id="exit-area">
+					<!-- 
+					<a href="javascript:closed();">close</a>
+					 -->
+					<a href="#" onclick="closed();">close</a>
+				</div>
+			</div>
+			<p>
+			팝업창의 내용을 구성합니다.
+			</p>
+		</div>
+		<!-- end -->
+		
+		<script>
+			function exe() {
+				var pop = document.getElementById('popup');
+				pop.style.display = "block";
+			}
+			
+			function closed() {
+				var pop = document.getElementById('popup');
+				pop.style.display = "none";
+			}
+		</script>
+	
+	</body>
+</html>

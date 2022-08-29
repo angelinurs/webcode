@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		
+		<style>
+			 div#wrap {
+				 border: 2px solid red;
+				 width: 600px;
+				 margin: 30px auto;
+				 padding: 10px;
+				 /* 
+				 	position 이 없으면
+				 	그 안의 자식 요소인 div 들의 기준이 body 가 되어
+				   	position 을 잡아주여야 함. 
+				   */
+				 position: relative;
+				 height: 300px; 
+			 }
+			 
+			 div#wrap>div {
+				 border: 1px solid black;
+				 width: 100px;
+				 height: 100px;
+				 margin-bottom: 20px;
+				 position: absolute; /* 상대적 위치 ( 좌표 ) */ 
+			 }
+			 
+			 div#d1 {
+			 	background-color: #f00;
+			 	top: 20px;
+			 	left: 20px;
+			 }
+			 
+			 div#d2 {
+			 	background-color: #0f0;
+			 	top: 20px;
+			 	right: 20px;
+			 }
+			 
+			 div#d3 {
+			 	background-color: #00f;
+			 	bottom: 20px;
+			 	right: 20px;
+			 }
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="d1"></div>
+			<div id="d2"></div>
+			<div id="d3"></div>
+		</div>
+	
+	</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		
+		<style type="text/css">
+			#header {
+				height: 80px;
+				margin: 0;
+				background-color: #1d1d1f;
+				color: #000;
+				/* border: 2px solid blue; */
+			}
+			
+			#nav {
+				width: 100%;
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				overflow: hidden;
+				font: bold 22px Arial;
+				/* border: 1px solid red; */
+				line-height: 80px;
+			}
+			
+			#nav>li {
+				display: inline;
+				margin-right: 40px;
+			}
+			
+			#nav a {
+				color: #f5f5f7;
+				text-decoration: none; /* 밑줄 없애기 */
+				margin: 0;
+				padding: 0;
+			}
+			
+			#nav a:hover {
+				/* 
+				color: #00bfff;
+				text-decoration: underline;
+				*/
+				color: #ff8000;
+				border-bottom: 4px solid #ff8000;
+				
+			}
+			
+			#nav .selected{
+				color: #ff8000;
+				border-bottom: 4px solid #ff8000;
+			}
+			
+			body {
+				margin: 0;
+				padding: 0;
+			}
+			
+			#nav a {
+				overflow: hidden;
+				background-repeat: no-repeat;
+			}
+			
+			#apple {
+				text-indent: -1000px;
+
+				background-image: url( images_2/icon_apple.svg );
+				width: 48px;
+				position: absolute;
+				background-size: 16px 44px;
+				background-repeat: no-repeat;
+				background-position: center center;
+				top: 2px;
+				left: -50px;
+				text-align: center;
+				z-index: 1;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<header id="header">
+			<!--
+				horizontal image menu 
+			 -->
+			<ul id="nav">
+				<li id="ac-gn-item ac-gn-apple">
+					<a id="apple" href="">
+						<span id="ac-gn-link-text">Apple</span>
+					</a>
+				</li>
+				<li id="ac-gn-item-menu ac-gn-store">
+					<a id="store" href="">
+						<span id="ac-gn-link-text">스토어</span>
+					</a>
+				</li>
+				<li id="ac-gn-item-menu ac-gn-mac">
+					<a id="mac" href="">
+						<span id="ac-gn-link-text">Mac</span>
+					</a>
+				</li>
+				<li id="ac-gn-item-menu ac-gn-ipad">
+					<a id="ipad" href="">
+						<span id="ac-gn-link-text">iPad</span>
+					</a>
+				</li>
+				<li id="ac-gn-item-menu ac-gn-iphone">
+					<a id="iphone" href="">
+						<span id="ac-gn-link-text">iPhone</span>
+					</a>
+				</li>
+				<li id="ac-gn-item-menu ac-gn-watch">
+					<a id="watch" href="">
+						<span id="ac-gn-link-text">Watch</span>
+					</a>
+				</li>
+				<li id="ac-gn-item-menu ac-gn-airpods">
+					<a id="airpods" href="">
+						<span id="ac-gn-link-text">AirPods</span>
+					</a>
+				</li>
+				<li id="ac-gn-item-menu ac-gn-tvhome">
+					<a id="tvhome" href="">
+						<span id="ac-gn-link-text">TV 및 홈</span>
+					</a>
+				</li>
+				<li id="ac-gn-item-menu ac-gn-onlyonapple">
+					<a id="onlyonapple" href="">
+						<span id="ac-gn-link-text">Apple 독점 제공</span>
+					</a>
+				</li>
+				<li id="ac-gn-item-menu ac-gn-accessories">
+					<a id="accessories" href="">
+						<span id="ac-gn-link-text">액세서리</span>
+					</a>
+				</li>
+				<li id="ac-gn-item-menu ac-gn-support">
+					<a id="support" href="">
+						<span id="ac-gn-link-text">고객지원</span>
+					</a>
+				</li>
+			</ul>
+		</header>
+	
+	</body>
+</html>

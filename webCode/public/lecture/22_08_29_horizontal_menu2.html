@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		
+		<style type="text/css">
+			#header {
+				height: 80px;
+				margin: 0;
+				background-color: #2e2e2e;
+				color: #000;
+				/* border: 2px solid blue; */
+			}
+			
+			#nav {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				overflow: hidden;
+				font: bold 22px Arial;
+				/* border: 1px solid red; */
+				line-height: 80px;
+			}
+			
+			#nav>li {
+				display: inline;
+				/* border:1px solid red; */
+				margin-left: 20px;
+				
+			}
+			
+			#nav a {
+				color: #fff;
+				text-decoration: none; /* 밑줄 없애기 */
+			}
+			
+			#nav a:hover {
+				/* 
+				color: #00bfff;
+				text-decoration: underline;
+				*/
+				color: #ff8000;
+				border-bottom: 4px solid #ff8000;
+				
+			}
+			
+			#nav .selected{
+				color: #ff8000;
+				border-bottom: 4px solid #ff8000;
+			}
+			
+			body {
+				margin: 0;
+				padding: 0;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<header id="header">
+			<!--
+				horizontal image menu 
+			 -->
+			<ul id="nav">
+				<li id="home" class="selected"><a href="">home</a></li>
+				<li id="store"><a href="">store</a></li>
+				<li id="mac"><a href="">mac</a></li>
+				<li id="ipod"><a href="">ipod</a></li>
+				<li id="download"><a href="">download</a></li>
+				<li id="support"><a href="">support</a></li>
+			</ul>
+		</header>
+	
+	</body>
+</html>

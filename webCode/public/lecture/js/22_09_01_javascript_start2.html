@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		
+		<style>
+			.box {
+				width: 300px;
+				height: 350px;
+				border: 1px solid #00f;
+			}
+			div.is_hidden {
+				display: none;
+				
+			}
+			
+			input[type=checkbox]:checked + .is_hidden {
+				display: block;
+				transition-duration: 1s;
+			}
+
+			input[type=checkbox]:checked + label[for=toggleBox]:after {
+				content: "hide";
+
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<section>
+				<article>
+					<h1># 1. 유효성 검사</h1>
+					<label for="toggleBox" >show</label>
+					<input type="checkbox" id="toggleBox" />
+					<div class="is_hidden">
+						<form action="text.jsp" method="post">
+							<label for="s_age">나이 :</label>
+							<input type="text" id="s_age" name="age" />
+							<br />
+							
+							<button type="button" onclick="valid_age();">확인</button>
+						</form>
+					</div>
+				</article>
+				
+				<article>
+					<h1># 2. Loop Test</h1>
+					<label for="toggleBox" >show</label>
+					<input type="checkbox" id="toggleBox" />
+					<div class="is_hidden">
+						<button type="button" onclick="loopTest();" >Loop Test</button>
+						<p>
+							<div id="box" class="box"></div>
+						</p>
+					</div>
+				</article>
+				
+				<article id='art3' onload="onloadTest();">
+					<h1># 3. mutiply</h1>
+					<label for="toggleBox" >show</label>
+					<input type="checkbox" id="toggleBox" />
+					<div class="is_hidden">
+						<div class="btn_no">
+							<button type="button" onclick="mutiply(2);">2</button>
+							<button type="button" onclick="mutiply(3);">3</button>
+							<button type="button" onclick="mutiply(4);">4</button><br />
+							<button type="button" onclick="mutiply(5);">5</button>
+							<button type="button" onclick="mutiply(6);">6</button>
+							<button type="button" onclick="mutiply(7);">7</button><br />
+							<button type="button" onclick="mutiply(8);">8</button>
+							<button type="button" onclick="mutiply(9);">9</button>
+						</div>
+						<p>
+							<div id="multiply" class="box" ></div>
+						</p>
+					</div>
+				</article>
+
+				<article>
+					<h1># 4. Check validation for signup form</h1>
+					<label for="toggleBox" >show</label>
+					<input type="checkbox" id="toggleBox" />
+					<div class="is_hidden">
+						<form action="" method="post" name="frm_birth">
+							<label for="u_id">아이디</label>
+							<input type="text" id="u_id" name="id" />
+							<br />
+							<label for="u_name">이름</label>
+							<input type="text" id="u_name" name="name" />
+							<br />
+							<label for="u_pw">Password</label>
+							<input type="password" id="u_pw" name="pw" />
+
+							<br />
+							<label for="u_loc">거주지</label>
+							<select id="uloc" name="loc" >
+								<option value="Seoul">Seoul</option>
+								<option value="Busan">Busan</option>
+								<option value="Inchon">Inchon</option>
+							</select>
+							<br />
+
+							<button type="button" onclick="isValid();">확인</button>
+						</form>
+					</div>
+				</article>
+
+				<article>
+					<h1># 5. Check validation for digit value</h1>
+					<label for="toggleBox" >show</label>
+					<input type="checkbox" id="toggleBox" />
+					<div class="is_hidden">
+						<form action="" method="post" name="frm1">
+							<label for="b_year">태어난 년도</label>
+							<input type="text" id="b_year" name="b_year" />
+							<br />
+							<!--
+								`this` 는 현재 button 객체를 의미한다.
+								`form` 은 현재 button 객체를 가지고 있는 form tag 객체를 가르킨다.
+							-->
+							<button type="button" onclick="checkValue( this.form );">확인</button>
+						</form>
+						<div id="age_box" class="box"></div>
+					</div>
+				</article>
+				
+				<article>
+					<h1># 6. switch case</h1>
+					<label for="toggleBox" >show</label>
+					<input type="checkbox" id="toggleBox" />
+					<div class="is_hidden">
+						<form action="" method="">
+							<label for="m_car">차종</label>
+							<!--
+								function call 이 이루지면서 select element 자체 object 와 선택된 값을 보냄.
+							-->
+							<select id="m_car" name="car" onchange="switchSelection( this.selectedIndex );">
+								<option value="r8">Audi</option>
+								<option value="GT">BentlyGT</option>
+								<option value="porche">Porche Italia</option>
+							</select>
+	
+						</form>
+						<br />
+	
+						<div id="switch_box" class="box"></div>
+
+					</div>
+
+				</article>
+				
+			</section>
+
+		</div>
+
+		<script>
+			function valid_age() {
+				let age = document.getElementById("s_age");
+				
+				if( age.value.trim().length ) {
+					var value = age.value.trim();
+					
+					// value = Number( value );
+					value = parseInt( value );
+					if( value >= 20 && value <= 29 ) {
+						alert( (value/10)*10 + " 대" );
+					} else if ( value >= 30 && value <= 39 ) {
+						alert( (value/10)*10 + " 대" );
+					}
+				}
+			}
+
+			function loopTest() {
+				let box = document.getElementById('box');
+				
+				var temp = '';
+				for( idx = 2; idx < 10; idx++ ) {
+					temp += (idx + '&nbsp;dan<br />')
+					for( jdx = 1; jdx < 10; jdx++ ) {
+						temp += (idx + '&nbsp;x&nbsp;' + jdx + ' = ' + (idx * jdx + '<br />'));
+					}
+				}
+				// alert( temp );
+				
+				box.innerHTML = temp;
+			}
+			
+			/*
+				use loop and make multiplication table
+			*/
+			function mutiply( nth ) {
+				let box = document.getElementById('multiply');
+				var temp = '';
+				
+				temp += (nth + '&nbsp;dan<br />')
+				for( jdx = 1; jdx < 10; jdx++ ) {
+					temp += (nth + '&nbsp;x&nbsp;' + jdx + ' = ' + (nth * jdx + '<br />'));
+				}
+				
+				box.innerHTML = temp;
+			}
+			
+			/*
+				check to validate data with elements array
+			*/
+			function isValid() {
+				let forms = document.forms;
+				let form = forms.namedItem("frm1");
+				// let form = forms[1];
+				let elems = form.elements;
+				
+				for( idx=0; idx < elems.length-1; idx++ ) {
+					// check valid each element in form tag
+					if( elems[idx].value.trim().length < 1 ) {
+						
+						alert( elems[ idx ].name + " 값이 없습니다. " )
+						elems[idx].focus();
+						
+						return;
+					}
+				}
+				
+				alert( "complete!!" );
+			}
+			
+			/*
+				if data is digit, handling to data
+			*/
+			function checkValue( frm ) {
+				let b_year = frm.b_year.value;
+				
+				if( isDigit( b_year ) ) {
+					console.log( b_year );
+					
+					let now = new Date();
+					let curr_year = now.getFullYear();
+					
+					let age = curr_year - parseInt( b_year );
+					
+					document.getElementById("age_box").innerText = ( age < 19 )? "미성년자" : "성인";
+				}
+			}
+			
+			function isDigit( data ) {
+				let value = true;
+				
+				// 받은 인자인 data 에서 한자씩 추출하여 
+				// 숫자인지 아닌지를 판단하는 반복문
+				for( let idx=0; idx < data.length; idx++ ) {
+					// str.charAt( idx )
+					// str.charCodeAt( idx )
+					if( '0'.charCodeAt(0) > data.charCodeAt( idx ) 
+					|| data.charCodeAt( idx ) > '9'.charCodeAt(0) ) {
+						
+						value = false;
+						break;
+					}
+				}
+				return value;
+			}
+			
+			
+			/*
+				use anonymous function and then treat to next step
+			*/
+			let switchSelection = function( idx ) {
+				let str='';
+				
+				switch( idx ) {
+					case 1:
+						msg = "웃는 아이";
+						break;
+						case 2:
+							msg = "안 웃는 아이";
+							break;
+							case 3:
+								msg = "하나도 안 웃는 아이";
+								break;
+							}
+
+				document.getElementById("switch_box").innerHTML = msg;
+
+				let items = document.getElementById("m_car");
+				// alert( items.elements[ idx ].innerText );
+				alert( items[idx].innerText );
+			};
+		</script>
+	</body>
+</html>

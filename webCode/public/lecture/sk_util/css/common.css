@@ -1,0 +1,241 @@
+@charset "UTF-8";
+@import "reset.css";
+
+/* initialize
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+*/
+
+
+/* ***********************
+	header area
+*/
+div#wrap {
+	width: 100%;
+	height: 100%;
+	margin: auto;
+	/* border: 1px solid green; */
+}
+
+div#header {
+	position: relative;
+	width: 970px;
+	height: 140px;
+	margin: auto;
+	/* border: 1px solid red; */
+}
+
+div#header>h1 {
+	width: 181px;
+	height: 59px;
+	background-image: url( ../img/logo.png );
+	text-indent: -1000px;
+	/* border: 1px solid orange; */
+}
+
+div#header>ul.gnb {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	height: 50px;
+	overflow: hidden;
+	padding: 0;
+	list-style: none;
+	
+	/*
+		안쪽 요소( li )가 inline-block 으로 설정시
+		글꼴의 크기와 연관되어 간격이 생기므로 글꼴크기를 없앤다.
+	*/
+	font-size: 0px;
+	
+	/* border: 1px solid black; */
+	
+}
+
+div#header>ul.gnb>li{
+	display: inline-block;
+	width: 194px;
+	height: 100%;
+	background-color: #ff5001;
+}
+
+div#header>ul.gnb>li:hover{
+	background-color: #e24c09;
+}
+
+div#header>ul.gnb>li>a {
+	display: block;
+	width: auto;
+	height: 100%;
+	text-align: center;
+}
+
+div#header>ul.gnb>li>a>.menu {
+	display: inline-block;
+	height: 20px;
+	line-height: 20px;
+	margin-top: 14px;
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+	padding-left: 30px;
+	background: url( ../img/gnb_bult.png );
+	background-repeat: no-repeat;
+}
+
+div#header>ul.gnb>li>a>.m02 {
+	background-position: 0 -20px;
+}
+div#header>ul.gnb>li>a>.m03 {
+	background-position: 0 -40px;
+}
+div#header>ul.gnb>li>a>.m04 {
+	background-position: 0 -60px;
+}
+div#header>ul.gnb>li>a>.m05 {
+	background-position: 0 -80px;
+}
+
+/* *********************
+	footer area
+*/
+
+div#footer {
+	width: auto;
+	padding: 40px 0px 50px;
+	background-color: #eee;
+	margin-top: 80px;
+}
+
+#footer .footer_area {
+	width: 900px;
+	margin: auto;
+}
+
+#footer .foot_guide {
+	overflow: hidden;
+	padding-bottom: 20px;
+}
+
+#footer .foot_guide li {
+	float: left;
+	padding: 0px 10px;
+	border-left: 1px solid #999;
+}
+
+#footer .foot_guide li:first-child {
+	border: none;
+	padding-left: 0;
+}
+
+#footer .foot_guide li a {
+	color: #777;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+#footer .foot_guide li a:hover {
+	color: #ff5100;
+}
+
+#footer address {
+	font-size: 12px;
+	color: #777;
+	padding-bottom: 6px;
+}
+
+#footer .copyright {
+	font-size: 11px;	
+}
+
+
+/* *************
+* button style
+*/
+
+.btn {
+	display: inline-block;
+	background-image: url( ../img/btn.png );
+	background-repeat: no-repeat;
+	text-indent: -1000px;
+}
+
+.btn a{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.btn_center {
+	text-align: center;
+}
+
+.btnArea_right {
+	float: right;
+}
+
+.b_login {
+	width: 86px;
+	height: 56px;
+	background-position: 0 0;
+}
+
+.b_search {
+	width: 156px;
+	height: 27px;
+	background-position: -100px 0;
+	right: 0;
+	top: 3px;
+}
+
+/* *************
+* Etc style
+*/
+
+.fr {
+	/*
+		!important 의미는 그 어떤 설정보다 우선 순위를 가진다.
+	*/
+	float: right !important;
+}
+
+.ellip {
+	/*
+		문자열을 공간에 맞도록 표현 및 줄임표
+	*/
+	display: inline-block;
+	width: 98%;
+	/*
+		스페이스바, 텝 줄바꿈을 등을 공백 1 칸으로 표시
+	*/
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/*
+	아래의 설정은 
+	연속된 float object 의 종단을 
+	처리하기 위한 statement 입니다.
+*/
+.fclear {
+	float: none;
+	clear: both;
+	content: '';
+	display: block;
+	height: 0 !important;
+}
+
+/* *************
+* board style
+*/
+.board_type01 .notice li a {
+	font-size: 12px;
+}

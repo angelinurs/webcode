@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		
+	</head>
+	<body>
+		<h1>HTML element 접근하기</h1>
+		<!-- 
+			tag 에서 `name` attribute 는 server 로 전달할때 parameter 로 쓰일때 쓴다.
+		-->
+		<input type="button" value="test1_Button 1" onclick="test1();"/>
+		<br />
+		<!-- 
+			button tag 의 경우 `type="button"`을 명시하지 않으면,
+			서버쪽으로 무조건 submit 한다.
+		-->
+		<input type="button" value="test2_Button 3" onclick="test2();"/>
+		<br />
+		
+		<button type="button" onclick="test1();" >Button 2</button>
+		<br />
+
+		<!-- #################################################### -->
+		
+		<h1>HTML attribute 제어하기</h1>
+		<input type="button" value="test3_ex_btn_A" onclick="toTextfield();" />
+		<br />
+		<input type="button" value="test3_ex_btn_B" onclick="toTextarea();" />
+		<br />
+		<input type="text" id="txt" /><br />
+		<textarea rows="6" cols="50" id="ta" name="ta">statement</textarea>
+		<br />
+
+		<h1>Jscript 기초</h1>
+		<script>
+			// 변수 선언과 초기화
+			// 자바스크립트는 자료형을 명시하지 않고,
+			//  값이 저장될때 내부적으로 지정된다.
+			// 변수 선언시 var 오 let 으로 지정한다. ( let 을 추천 )
+			let a1 = 100;
+			let a2 = 30;
+
+			let str = '값';
+
+			let res = a1 / a2;
+
+			document.write( 'a1 / a2  = ' + res + ' ' + str + '<br />' );
+			
+			res = a1 % a2;
+			document.write( 'a1 % a2  = ' + res + ' ' + str + '<br />' );
+
+			document.write('<strong>' +  a1 + a2 +'</strong>');
+
+			
+			/* ********************
+			 * html element 접근하기
+			*/
+			function test1() {
+				// 현재 화면에 a 의 값을 출력하자.
+				// 화면 전체를 지우고 새로 쓴다.
+				// document.write( "a1 = " + a1 );
+
+				let textarea = document.getElementsByTagName( 'textarea' );
+				
+				textarea[0].innerHTML= "a1 = " + a1;
+			}
+
+			function test2() {
+				let ta = document.getElementById('ta');
+				
+				ta.innerText = ++a1;
+			}
+			
+			/* ********************
+			 * attribute 접근하기
+			*/
+			function toTextfield() {
+				let txt = document.getElementById( 'txt');
+				// txt.setAttribute( 'value', ++a1 );
+				txt.value = ++a1
+			}
+
+			function toTextarea() {
+				let txt = document.getElementById( 'txt' );
+				let textarea = document.getElementById( 'ta' );
+
+				// input text 에서 입력이 들어올 경우에만 textarea 로 copy
+				if ( txt.value.trim().length ) {
+
+					// textarea.innerText = txt.getAttribute( 'value' );
+					textarea.innerText = txt.value;
+				}
+
+			}
+
+		</script>
+	</body>
+</html>

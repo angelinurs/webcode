@@ -1,0 +1,147 @@
+@charset "UTF-8";
+
+p.title_src {
+	font-size: 15px;
+	font-weight: bold;
+	color: #222;
+	padding: 10px 0 40px 5px;
+	/*
+		em 은 상위 element 가 가지는 속성값의 배수.
+	*/
+	line-height: 1.5em;
+}
+
+p.guide_txt {
+    display: block;
+
+    position: relative;
+
+    text-align: left;
+    font-weight: bold;
+    font-size: 12px;
+    font-weight: bold;
+    color: grey;
+}
+
+p.guide_txt span.fr {
+    display: inline-block;
+
+    position: absolute;
+    right: 0;
+
+    padding-left: 12px;
+
+    font-size: 12px;
+    font-weight: bold;
+    color: grey;
+}
+
+.req {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    background-image: url( ../img/bult.png );
+    background-position: 0 0;
+}
+
+table.table_type01>tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+table.table_type01>tbody tr:first-child {
+    border-top: 1px solid #ddd;
+}
+
+table.table_type01>colgroup>col:first-child {
+    width: 150px;
+}
+
+table.table_type01>tbody th {
+    background-color: #efefef;
+    position: relative;
+
+    text-align: left;
+    border-right: 1px solid #ddd;
+
+    font-weight: bold;
+    padding: 10px 0px 10px 30px;
+}
+
+table.table_type01>tbody th>span.req {
+    position: absolute;
+    left: 12px;
+}
+
+table.table_type01>tbody td {
+    padding: 10px;
+    height: 20px;
+
+    text-align: left;
+    font-weight: bold;
+}
+
+table.table_type01>tbody input[type=text],
+table.table_type01>tbody input[type=password] {
+    height: 25px;
+    margin-top: 10px;
+    
+    padding-left: 3px;
+
+    border-radius: 5px;
+    outline: 1px solid #ddd;
+    border: none;
+}
+
+label.hidden {
+    display: none;
+}
+
+.s_id {
+    display: block;
+    line-height: 30px;
+}
+
+input.s_nickname::placeholder {
+    font-weight: bold;
+}
+
+.s_gender {
+    padding: 2px 5px 2px 5px;
+    border-radius: 20px;
+}
+
+p>.b_bdcheck {
+    position: relative;
+    top: -5px;
+    display: inline-block;
+    width: 57px;
+    height: 25px;
+    margin-left: 10px;
+    background-position: 0 -150px;
+    /* border: 1px solid red; */
+}
+
+.b_ok {
+    width: 70px;
+    height: 40px;
+    margin-left: 10px;
+    background-position: 0 -100px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+div.btn_area {
+    text-align: center;
+}
+
+.b_cancel {
+    width: 70px;
+    height: 40px;
+    margin-left: 10px;
+    background-position: -100px -100px;
+    margin-left: 0;
+    margin-right: 0;
+}

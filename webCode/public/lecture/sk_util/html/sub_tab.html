@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<!-- 외부 css 파일 연결 -->
+		<link type="text/css" rel="stylesheet" href="../css/common.css">
+		<link type="text/css" rel="stylesheet" href="../css/sub_tab.css">
+		
+	</head>
+	<body>
+		<div id="wrap">
+			<!--  header -->
+			<div id="header">
+				<h1>SK Together</h1>
+				<ul class="gnb">
+					<li>
+						<a href="">
+							<span class="menu m01">기브유</span>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<span class="menu m02">위드유</span>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<span class="menu m03">스마트 전통시장</span>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<span class="menu m04">Bravo!Restart</span>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<span class="menu m05">SKT와 사회공헌</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!--  end -->
+			
+			<!--  contents -->
+			<div id="contents_sub">
+				<p>
+					<img src="../img/@img05.png" alt="위드유봉사" />
+				</p>
+				
+				<div class="tab_type01">
+					<ul>
+						<li id="t1" class="selected"><a href="javascript:ex1(1);">위드유</a></li>
+						<li id="t2"><a href="javascript:ex1(2);">위드유 영상보기</a></li>
+						<li id="t3"><a href="javascript:ex1(3);" >위드유 대화</a></li>
+					</ul>
+				
+				</div>
+				
+				<!-- 
+					탭이 선택될때 보여질 내용들
+					( 이중 1개만 보여준다. )  
+				-->
+				<div id="tab1" class="tab_cont show">
+				    해치<br /><br />
+					선악을 구별하고 정의를 지키는 전설 속의 동물로, '해태'라고도 불린다. <br /><br />
+					예로부터 해치는 화재와 재앙을 막는 상서로운 동물로 여겨져 궁궐 입구 등에 세워졌다.<br /><br />
+				</div>
+				<div id="tab2" class="tab_cont">
+					기린<br /><br />
+					기린은 오색 찬란 화려한 빛깔의 털을 가지고 이마에는 기다란 뿔이 하나 있는 외뿔잡이 동물이다.<br /><br /> 
+					사슴의 몸에 소의 꼬리, 말과 비슷한 발굽과 갈기를 갖고 있다고 알려진 상상 속의 동물이다. <br /><br />
+					예로부터 용, 거북, 봉황과 함께 사영수(四靈獸)를 이루어, 신성한 동물로 인식되었다.<br /><br />
+				</div>
+				<div id="tab3" class="tab_cont">
+					용<br /><br />
+					사슴의 뿔, 소의 머리, 뱀의 몸, 물고기의 비늘, 독수리의 발톱, 입과 턱 아래 수염을 하고 있는 형상으로, 비를 내리게 하고 요괴나 귀신을 제압하는 능력이 있다.<br /><br /> 
+					장원급제, 입신출세, 만사형통 등 상서로운 의미와 더불어 제왕을 상징하기도 하며, 불교에서는 호불신으로 여겨지기도 한다. <br /><br />
+					즉 신령의 걸물이요 권위의 상징인 동물이다.
+				</div>
+				
+				
+			</div>
+			<!--  end -->
+			
+			<!--  footer -->
+			<div id="footer">
+				<div class="footer_area">
+					<ul class="foot_guide">
+						<li><a href="">개인정보취급방침</a></li>
+						<li><a href="">웹회원 이용약관</a></li>
+						<li><a href="">책임한계와 법적고지</a></li>
+						<li><a href="">이메일 무단수집 거부</a></li>
+					</ul>
+					<address>
+						서울특별시 중구 을지로 몇가 몇번지
+						대표이사 : 홍길동
+						고객상담 : 국번없이 111
+						02-1234-1234 (평일 09:30~17:30)
+					</address>
+					<p class="copyright">
+						Copyright (c)2022 SK Telecom
+						All right reserved
+					</p>
+				</div>
+			</div>
+			
+			<!--  end -->
+		</div>
+	
+
+		<script>
+			// 자바 스크립트는 자료형을 지정하지 않는다.
+			function ex1( n )	{
+				// 모든 탭에 class 를 지운다.
+				// 우선 id 가 t1, t2, t3 인 요소들을 모두 검색해야함.
+				let t1 = document.getElementById( "t1" );
+				var t2 = document.getElementById( "t2" );
+				var t3 = document.getElementById( "t3" );
+
+				// 지정된 element 의 class 삭제하기
+				t1.className = "";
+				t2.className = "";
+				t3.className = "";
+
+				var tab1 = document.getElementById( "tab1" );
+				var tab2 = document.getElementById( "tab2" );
+				var tab3 = document.getElementById( "tab3" );
+
+				tab1.className = "tab_cont";
+				tab2.className = "tab_cont";
+				tab3.className = "tab_cont";
+				
+				// argument `n` 에 따라 class 를 selected 로 지정한다.
+				switch( n ) {
+					case 1:
+						t1.className = "selected";
+						tab1.className = "tab_cont show";
+						break;
+					case 2:
+						t2.className = "selected";
+						tab2.className = "tab_cont show";
+						break;
+					case 3:
+						t3.className = "selected";
+						tab3.className = "tab_cont show";
+						break;
+				}
+				ex2();
+			}
+
+			function ex2() {
+				console.log( t1 );
+			}
+
+		</script>
+	</body>
+</html>

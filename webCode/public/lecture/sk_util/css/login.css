@@ -1,0 +1,132 @@
+@charset "UTF-8";
+
+#contents_sub {
+    width: 900px;
+    height: auto;
+    margin: auto;
+    margin-top: 30px;
+}
+
+#contents_sub .login_area {
+    width: 750px;
+    height: 205px;
+
+    background-image: url( ../img/login_bg.png );
+    background-repeat: no-repeat;
+
+    margin: 80px auto;
+    padding: 20px 70px;
+}
+
+.person_login {
+    float: left;
+    width: 290px;
+}
+
+.group_login {
+    float: right;
+    width: 290px;
+}
+
+.login {
+    padding: 15px 0px;
+}
+
+.sub_title {
+    margin-left: 10px;
+    margin-bottom: 0px;
+
+    background-image: url( ../img/sub_title.png );
+    background-repeat: no-repeat;
+
+    text-indent: -9999px;
+}
+
+h1.tit02 {
+    width: 135px;
+    height: 30px;
+    background-position: 0 -50px;
+}
+
+.title01 {
+    width: 290px;
+    height: 75px;
+    background-position: 0 -80px;
+}
+
+#contents_sub .title02 {
+    width: 290px;
+    height: 75px;
+    background-position: 0 -160px;
+}
+
+.login .input_area p label {
+    display: inline-block;
+    padding-left: 10px;
+    width: 55px;
+    background-image: url( ../img/bult.png );
+    background-repeat: no-repeat;
+    background-position: 0 -77px;
+}
+
+.login .input_area p {
+    padding: 3px 0;
+}
+
+.login .input_area p:first-child {
+    padding-top: 0;
+}
+
+.login .input_area p input {
+    width: 110px;
+    height: 14px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.login .input_area {
+    float: left;
+    width: 202px;
+}
+
+.login_search {
+    margin-top: 10px;
+    border-top: 2px solid #efefef;
+    padding: 10px 0;
+    position: relative;
+}
+
+/* 
+#contents_sub .login_area>div {
+    width: 444px;
+    height: 200px;
+
+    border: 1px solid darkolivegreen;
+}
+
+
+.login_area .person_login {
+    position: absolute;
+    left: 0;
+    width: 444px;
+    height: 245px;
+}
+
+.login_area .group_login {
+    position: absolute;
+    right: 0;
+    width: 444px;
+    height: 245px;
+}
+
+.login form .b_login {
+    display: block;
+    position: absolute;
+    right: 40px;
+    width: 90px;
+    height: 60px;
+    background-position: 0 0;
+
+}
+ */

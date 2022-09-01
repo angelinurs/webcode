@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+#contents_sub {
+	width: 900px;
+	height: auto;
+	margin: auto;
+	padding-top: 40px; 
+}
+
+.sub_title {
+	background-image: url( ../img/sub_title.png );
+	background-repeat: no-repeat;
+	text-indent: -1000px;
+}
+
+h1.title01 {
+	height: 30px;
+	background-position: 0 0;
+}
+
+h2.title03 {
+	height: 20px;
+	width: 55px;
+	background-position: 0 -30px;
+}
+
+h2.title04 {
+	height: 20px;
+	width: 100px;
+	background-position: -55px -30px;
+}
+
+p.title_src {
+	font-size: 15px;
+	font-weight: bold;
+	color: #222;
+	/* 
+		안쪽여백의 위쪽은 10px, 
+				왼쪽은 5px, 
+				아래쪽은 40px, 
+				오른쪽은 주지않으려 한다. 
+	*/
+	padding: 10px 0px 40px 5px;
+}
+
+p.chk_area {
+	text-align: right;
+	margin-top: 5px;
+}
+
+.btn_center > .b_agree {
+	width: 100px;
+	height: 30px;
+	background-position: 0 -70px;
+}
+
+.btn_center > .b_no_agree {
+	width: 122px;
+	height: 30px;
+	background-position: -100px -70px;
+}
+
+textarea {
+	resize: none;
+	
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<input type="button" value="버튼1" onclick="test1()"/>
+	<br/>
+	<button type="button" onclick="test2()">버튼2</button>
+	<br/>
+	<textarea rows="6" cols="50" id="ta" name="ta">여기에...</textarea>
+	
+	<script>
+		let a = 10;
+		
+		function test1(){
+			//현재화면에 a의 값을 출력하자!
+			document.write("a="+a); //이건 기존의 데이터를 모두 지우고 쓰기함
+		}
+		function test2(){
+			//현재문서에서 아이디가 ta인 요소를 검색한다.
+			let ta = document.getElementById("ta");
+			
+			//검색된 ta안에 문자열로 변수 a의 값을 지정한다.
+			ta.innerText = ++a;
+		}
+	</script>
+</body>
+</html>

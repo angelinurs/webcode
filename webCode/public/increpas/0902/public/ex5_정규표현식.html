@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>정규표현식 활용</h2>
+	<article>
+		<form action="" name="frm">
+			<label for="v1">값1:</label>
+			<input type="text" id="v1" name="val1"/>
+			<button type="button" onclick="exe()">확인</button>
+		</form>
+	</article>
+	
+	<script>
+		function exe(){
+			//현재 문서 내에 폼안에 있는 자원 가져오기 3가지 방법
+			let str = document.getElementById("v1").value;
+			
+			let str2 = document.frm.val1.value;
+			let str3 = document.forms[0].val1.value;
+			
+			console.log(str+"/"+str2+"/"+str3);
+			
+			//trim효과를 직접 함수로 정의하여 호출해 보자!
+			let msg = m_trim(str);
+			
+			document.frm.val1.value = msg;// 기존에 사용자가 입력한 것을
+			//공백이 제거된 문자열로 변경한다.
+			
+			if(msg == ""){
+				alert("값을 입력하세요");
+				return;
+			}
+			
+			console.log("서버로 보낸다.");
+		}
+		
+		function m_trim(str){
+			// " " 띄운 공백을 찾아서 붙힌공백("")으로 바꿔주는 함수
+			//받은 인자의 값에서 띄운 공백을 찾아 없앤다.
+			let ss = str.replace(/^\s+|\s+|\s+$/g,"");
+			/*
+				/^ : 처음 시작부분
+				\s : 띄운 공백
+				+  : +기호 앞의 정규표현식과 일치한 경우가
+						1번 이상일때를 의미
+				|  : 또는 (OR)
+				$/ : 끝부분
+				g  : 찾음
+			*/
+			return ss;
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 350px;
+            border: 1px solid #00f;
+        }
+        div.is_hidden {
+            display: none;
+            
+        }
+        
+        input[type=checkbox]:checked + .is_hidden {
+            display: block;
+            transition-duration: 1s;
+        }
+
+        input[type=checkbox]:checked + label[for=toggleBox]:after {
+            content: "hide";
+        }
+
+        table.table03 th, table.table03 td {
+            border: 1px solid #dedede;
+            padding: 4px;
+
+            background-color: cadetblue;
+        }
+
+        table.table03 caption {
+            text-indent: -9999px;
+            height: 0;
+        }
+
+        table.table03>thead>tr:first-child td {
+            border: none;
+            text-align: right;
+        }
+
+        #art_3 button[type=button] {
+            width: 80px;
+            height: 40px;
+            border: 1px solid #ff5100;
+            border-radius: 10px;
+            color: firebrick;
+            font-weight: bold;
+            font-size: 15px;
+            background-color: cornflowerblue;
+
+
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <article id="art_1">
+            <h1># 1. Regular expression using jquery</h1>
+            <label for="toggleBox">show</label>
+            <input type="checkbox" id="toggleBox" />
+            <div class="is_hidden">
+                <form action="" name="frm_2">
+                    <label for="v1">값1:</label>
+                    <input type="text1" id="v1" name="v1" />
+                    <button type="button" onclick="excute_fct();">Confirm</button>
+                </form>
+            </div>
+        </article>
+        
+        <article id="art_2">
+            <h1># 2. css change using jquery</h1>
+            <label for="toggleBox">show</label>
+            <input type="checkbox" id="toggleBox" />
+            <div class="is_hidden">
+                <h1 id="h1"> This is `h1` element </h1>
+                <h2 id="h2"> This is `h2` element </h2>
+                <h1 id="h1"> This is `h1` element </h1>
+                <br />
+                <input type="button" value="H1 CSS_change" id="h1_btn" />
+                <button type="button" id="h2_btn">H2 CSS_change</button>
+            </div>
+        </article>
+        
+        <article id="art_3">
+            <h1># 3. event `bind()` vs `unbind()` using jquery</h1>
+            <label for="toggleBox">show</label>
+            <input type="checkbox" id="toggleBox" />
+            <div class="is_hidden">
+                <button type="button" id="btn1">Red</button>
+                <button type="button" id="btn2">Green</button>
+                <button type="button" id="btn3">Blue</button>
+                <br />
+                <div id="box" class="box"></div>
+            </div>
+        </article>
+       </article>
+    
+        <article id="art_4">
+            <h1># 4. select even elements using jquery</h1>
+            <label for="toggleBox">show</label>
+            <input type="checkbox" id="toggleBox" />
+            <div class="is_hidden">
+                <button type="button" id="btn">CSS 적용</button>
+                <br />
+                <p>p element 1</p>
+                <p>p element 2</p>
+                <p>p element 3</p>
+                <a href="">a element 1</a> 
+                <p>p element 4</p>
+                <p>p element 5</p>
+                <p>p element 6</p>
+                <p>p element 7</p>
+                <a href="">a element 2</a> 
+                <p>p element 8</p>
+                <p>p element 9</p>
+                <div id="box" class="box"></div>
+            </div>
+        </article>
+        
+        <article id="art_5">
+            <h1># 5. another way using jquery</h1>
+            <label for="toggleBox">show</label>
+            <input type="checkbox" id="toggleBox" />
+            <div class="is_hidden">
+                <h1>Subject</h1>
+                <button type="button" id="btn">Confirm</button>
+                <br />
+                <ul>
+                    <li id="t1">JavaScript</li>
+                    <li id="t2">ActionScript</li>
+                    <li id="t3">NodeJS</li>
+                    <li id="t4">jQuery</li>
+                </ul>
+                <ul>
+                    <li id="t5">C lang</li>
+                    <li id="t6">Java</li>
+                    <li id="t7">Python</li>
+                </ul>
+                <div id="box" class="box"></div>
+            </div>
+        </article>
+        
+        <article id="art_6">
+            <h1># 6. add row using jQuery</h1>
+            <label for="toggleBox">show</label>
+            <input type="checkbox" id="toggleBox" />
+            <!-- <div class="is_hidden"> -->
+            <div class="hidden">
+                <label for="u_name" id="u_name_label">이름</label>
+                <input type="text" id="u_name" />
+                <br />
+                <label for="u_phone" id="u_phone_label">연락처</label>
+                <input type="text" id="u_phone" />
+                <br />
+                
+                <table class="table03">
+                    <caption>Person table</caption>
+                    <thead>
+                        <tr>
+                            <td colspan="4">
+                                <button type="button" id="btn">Add</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>번호</td>
+                            <td>이름</td>
+                            <td>연락처</td>
+                            <td>삭제</td>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+
+                </table>
+                
+            </div>
+        </article>
+        
+    </section>
+    
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+        crossorigin="anonymous"></script>
+    <script>
+        $( function(){
+            $( "#h1_btn" ).click( function() {
+                // alert( "Run~!!!" );
+                $( "#art_2 h1#h1" ).css( "color", "#ff5100");
+
+            });
+            $( "#h2_btn" ).bind( "click", function() {
+                $( "#art_2 h2#h2" ).css( "color", "#5100ff" );
+
+            });
+
+            // 자주 쓰이는 기능은 anonymous function 대신 
+            // 외부에 function 을 사용하여 쓴다.
+            $( "#btn1" ).bind( "click", colorBtnHandler );
+
+            $( "#btn2" ).bind( "click", function() {
+                $( "#box" ).css( "background-color", "#a51");
+
+                $( "#btn1" ).unbind( "click" );
+            } );
+
+            $( "#btn3" ).bind( "click", function() {
+                $( "#box" ).css( "background-color", "#1a1");
+
+                $( "#btn1" ).bind( "click", colorBtnHandler );
+            } );
+
+            $( "#art_4 #btn" ).bind( "click", function() {
+                // Case 01.
+                // $( "#art_4 p:nth-child(2n)" ).css( "color", "red" );
+
+                // Case 02.
+                let p_elems = $( "#art_4 p" );
+
+                for( var idx = 0; idx < p_elems.length; idx++ ) {
+                    if( ( idx + 1 ) % 2 == 0 )  {
+                        $( p_elems[ idx ] ).css( "color", "red" );
+                    }
+                }
+            });
+
+            $( "#art_5 #btn" ).bind( "click", function() {
+                // Case 01.
+                // let li_elems = $( "#art_5 ul li" );
+                
+                // let select_items = new Array();
+                
+                // for( var idx=0; idx < li_elems.length; idx++ ) {
+                //     if( ( idx % 2 ) & 1 ) {
+                //         select_items.push( li_elems[idx].innerText );
+                //         // console.log( select_items.toString() );
+                //         $( "#art_5 #box" ).append( li_elems[idx].innerText );
+                //         $( "#art_5 #box" ).append( "<br />" );
+                //     }
+                // }
+                
+                // Case 02. jQuery style
+                var idx = 0;
+                
+                let select_items = "";
+                        
+                $( "#art_5 ul li" ).each( function() {
+                    if( ( idx % 2 ) & 1 ) {
+                        select_items += $( this ).text() + "<br />";
+                        // $( "#art_5 #box" ).append( $( this ).text() );
+                        // $( "#art_5 #box" ).append( "<br />" );
+                    }
+                    idx++;
+                });
+                $( "#art_5 #box" ).html( select_items );
+
+                // 특정 요소만 style 을 변경할 때,
+                $( "#art_5 ul li" ).eq( 5 ).css( "color", "orange" );
+                
+                // 또는 아래와 같이 가능하다.
+                let t4Idx = $( "#art_5 ul li" ).index( $( "#t4" ) );
+                $( "#art_5 ul li" ).eq( t4Idx ).css( "color", "red" );
+            });
+
+            /*
+            * art_6.
+            */
+           let count = 0;
+           $( "#art_6 #btn" ).bind( "click", function() {
+                let flag;
+                let values = new Array();
+
+                
+                $( "#art_6 input[type=text]" ).each( function() {
+                    
+                    
+                    var val = $( this ).val();
+                    
+                    if(  val.trim().length > 0 ) {
+                        values.push( val.trim() );
+                    }
+                    
+                });
+
+                if( values.length != 2 ) {
+                    return;
+                } 
+                // alert( '<button type="button" id="btn">Add</button>' );
+                
+                $( "#art_6 tbody" ).append( $row = $( "<tr></tr>" ) );
+                
+                $row.append( $cell = $( "<td></td>" ) );
+                $cell.text( count++ );
+
+                $row.append( $cell= $( "<td></td>" ) );
+                $cell.text( values.shift() );
+
+                $row.append( $cell= $( "<td></td>" ) );
+                $cell.text( values.shift() );
+
+                $row.append( $cell= $( "<td></td>" ) );
+
+                $cell.html( $button = $('<button></button>') );
+                $button.prop( "id", "del_btn" );
+                $button.prop( "name", "del_btn" );
+                $button.prop( "type", "button" );
+                $button.text( "delete" );
+                // $cell.html( '<button type="button" id="btn">Add</button>' );
+
+           });
+        });
+
+        // $( function() { 
+        //   // 아래의 funciton 을
+        //   // 이안에 선언 안하는 이유는
+        //   // 이안에는 보통 초반에 초기화 되는 내용만 들어가기 때문이다.
+        // })
+        function colorBtnHandler() {
+            $( "#box" ).css( "background-color", "#15a");
+        };
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		
+		<style>
+			.box {
+				width: 300px;
+				height: 350px;
+				border: 1px solid #00f;
+			}
+			div.is_hidden {
+				display: none;
+				
+			}
+			
+			input[type=checkbox]:checked + .is_hidden {
+				display: block;
+				transition-duration: 1s;
+			}
+
+			input[type=checkbox]:checked + label[for=toggleBox]:after {
+				content: "hide";
+
+			}
+
+			table.table01 th, table.table01 td {
+				border: 1px solid #dedede;
+				padding: 4px;
+
+				background-color: cadetblue;
+			}
+
+			table.table01 caption {
+				text-indent: -9999px;
+				height: 0;
+			}
+
+			table.table01>thead>tr:first-child td {
+				border: none;
+				text-align: right;
+			}
+		</style>
+	</head>
+	<body onload="init();">
+		<div id="wrap">
+			<section>
+				<article>
+					<h1># 1. onload event</h1>
+					<label for="toggleBox" >show</label>
+					<input type="checkbox" id="toggleBox" />
+					<div class="is_hidden">
+						
+					</div>
+				</article>
+
+			</section>
+		</div>
+		<script>
+			// 아래 두개의 function 은 
+			// window object 에 있는 function 이 먼저 동작한다.
+			// 그러므로 두가지 방법 동시에 작동하는 것을 기대하고 작성될 필요는 없다.
+			function init() {
+				// alert( "init()" );
+			}
+
+			window.onload = function() {
+				alert( "window.onload" );
+			}
+		</script>
+	</body>
+</html>

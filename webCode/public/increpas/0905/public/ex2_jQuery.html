@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#table{
+		width: 600px;
+		border-collapse: collapse;
+	}
+	#table th, #table td{
+		border: 1px solid black;
+	}
+	#table>thead>tr{
+		background-color: #cdcdcd;
+		height: 40px;
+	}
+</style>
+</head>
+<body>
+	<h1>jQuery를 이용한 전체선택</h1>
+	<table id="table">
+		<colgroup>
+			<col width="30px"/>
+			<col width="*"/>
+		</colgroup>
+		<thead>
+			<tr>
+				<td colspan="2">
+					<input type="checkbox" id="all"/>
+					<em>전체선택</em> <!-- emphasize태그는 문장안에서 강조하고 싶을 때 쓴다.
+										i태그와 strong태그를 합진 것! -->
+				</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<input type="checkbox" id="ch1" name="chk"/>
+				</td>
+				<td>타이틀1</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" id="ch2" name="chk"/>
+				</td>
+				<td>타이틀2</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" id="ch3" name="chk"/>
+				</td>
+				<td>타이틀3</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" id="ch4" name="chk"/>
+				</td>
+				<td>타이틀4</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" id="ch5" name="chk"/>
+				</td>
+				<td>타이틀5</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" id="ch6" name="chk"/>
+				</td>
+				<td>타이틀6</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" id="ch7" name="chk"/>
+				</td>
+				<td>타이틀7</td>
+			</tr>
+		</tbody>
+	</table>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+	<script>
+		$(function(){			
+			
+			// 테이블 안에 그것도 tbody안에 있는 checkbox들 모두 가져오기(thead에 있는 checkbox는 제외!)
+			let ar = $("#table>tbody").find(":checkbox");
+			//let ar = $("#table>tbody input:checkbox");
+			
+			
+			//아이디가 all인 요소에 click이벤트 적용
+			$("#all").bind("click",function(){
+				// 전체선택의 체크박스 상태는 고려하지 않고, tbody안에 있는 모든 
+				//체크박스들을 검색해야 한다. 우린 이미 ar로 받아뒀다.
+				
+				//아이디가 all인 요소(this)의 상태에 따라 ar에 있는
+				//체크박스들의 상태가 바껴야 한다.
+				if(this.checked){ //all이 선택된 경우
+					
+					//tbody에 있는 모든 checkbox들을 체크상태로 변경한다.
+					ar.prop("checked", true);
+					$(this).next().html("선택해제");
+				}else{
+					ar.prop("checked", false);
+					$(this).next().html("전체선택");
+				}
+			});
+			
+			//tbody에 있는 체크박스들에게 클릭이벤트 적용
+			$("#table>tbody input:checkbox").bind("click", function(){
+				let chk = true;
+				let txt = "선택해제";
+				//tboby안에 있는 checkbox들 중 하나라도 체크가 안되어 있다면
+				//아이디가 all인 요소도 check를 해제해야 한다.
+				for(let i=0; i<ar.length; i++){
+					if(!ar.eq(i).is(":checked")){
+						chk = false;
+						txt = "전체선택";
+						break;
+					}
+				}
+				
+				//아이디가 all인 요소의 체크상태를 chk값으로 변경한다.
+				$("#all").prop("checked", chk);
+				$("#all").next().text(txt);
+			});
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+
+

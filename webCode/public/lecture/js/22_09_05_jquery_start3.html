@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 350px;
+            border: 1px solid #00f;
+        }
+        div.is_hidden {
+            display: none;
+            
+        }
+        
+        input[type=checkbox]:checked + .is_hidden {
+            display: block;
+            transition-duration: 1s;
+        }
+
+        input[type=checkbox]:checked + label[for=toggleBox]:after {
+            content: "hide";
+        }
+
+        #table {
+            width: 600px;
+            border-collapse: collapse;
+        }
+
+        table th, table td {
+            border: 1px solid #000;
+        }
+        
+        table caption {
+            text-indent: -9999px;
+            height: 0;
+        }
+        
+        table>thead>tr:first-child td {
+            background-color: #cdcdcd;
+            /* border: none; */
+            /* text-align: right; */
+        }
+
+        .test {
+            color: #00f;
+        }
+
+        #box {
+            border: 1px solid #ff5100;
+            width: 200px;
+            height: 200px;
+            background-color: cadetblue;
+            overflow: auto;
+        }
+        #box p {
+            width: 100%;
+            height: 100%;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        #art_7 #box p {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <article id="art_1">
+            <h1># 1. Radio using jquery</h1>
+            <label for="toggleBox">show</label>
+            <input type="checkbox" id="toggleBox" />
+            <div class="is_hidden">
+                <input type="radio" value="public" name="rdo">공개용
+                &nbsp;&nbsp;
+                <input type="radio" value="private" name="rdo"><span>비공개용</span>
+            </div>
+        </article>
+        
+        <article id="art_2">
+            <h1># 2. Select All using jquery</h1>
+            <label for="toggleBox">show</label>
+            <input type="checkbox" id="toggleBox" />
+            <div class="is_hidden">
+                <table id="table">
+                    <colgroup>
+                        <col width="30px" />
+                        <col width="*" />
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <td colspan="2">
+                                <!-- 
+                                    `<em>` 즉 emphasize element 는 문장안에서 강조하고 싶을 때 사용한다.
+                                    `<i>` 와 `<strong>` 을 동시에 한 것과 같다.
+                                -->
+                                <input type="checkbox" id="all" /><em>전체선택</em>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="checkbox" id="ch1" name="chk" />
+                            </td>
+                            <td>Title1</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" id="ch2" name="chk" />
+                            </td>
+                            <td>Title2</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" id="ch3" name="chk" />
+                            </td>
+                            <td>Title3</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" id="ch4" name="chk" />
+                            </td>
+                            <td>Title4</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" id="ch5" name="chk" />
+                            </td>
+                            <td>Title5</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" id="ch6" name="chk" />
+                            </td>
+                            <td>Title6</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" id="ch7" name="chk" />
+                            </td>
+                            <td>Title7</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+
+        <article id="art_3">
+            <h1># 3. `.eq()` method using jquery</h1>
+            <label for="toggleBox">show</label>
+            <input type="checkbox" id="toggleBox" />
+            <div class="is_hidden">
+                <button type="button" id="btn">Apply</button>
+                <div>
+                    <p>조심하자! 태풍</p>
+                    <em>월요일</em>
+                    First div
+                </div>
+                <div>
+                    <p>몰디브</p>
+                    <p>산토리니</p>
+                    <p>그로토</p>
+                </div>
+                <p>가자~!</p>
+                
+            </div>
+        </article>
+
+        <article id="art_4">
+            <h1># 4. hidden using jquery</h1>
+            <label for="toggleBox">show</label>
+            <input type="checkbox" id="toggleBox" />
+            <div class="is_hidden">
+                <input type="button" value="Hide" id="btn" />
+
+                <div id="box">
+                    <p>
+                        우주 이민과 우주 전쟁의 역사가 시작된 우주세기 종식 후 장시간의 시간이 흘렀다. 새로운 시대, 리길드 센추리(R.C)를 맞게 된 인류의 조화와 번영은 평화와 더불어 이대로 계속되어 나가는 것이라고 여겨지게 되었다.
+                        <br /><br />
+                        때는 바야흐로 R.C 1014년.
+                        <br /><br />
+                        지상에서 우뚝 솟은 지구와 우주를 잇는 궤도 엘리베이터 캐피털 타워. 지구상의 에너지원인 포톤 배터리를 우주보다 더 많이 가지고 있기에 신성시되는 곳이다. 그 캐피털 타워를 수호하기 위해 조직된 캐피털 가드의 생도 벨리 제남은 처음 실습 중에 어느 나라의 기술도 아닌 고성능 모빌슈트 G-셀프의 습격을 받게 된다.
+                        <br /><br />
+                        작업용 모빌슈트로 교전한 벨리는 G-셀프 포획에 성공한다. 그러나 G-셀프를 조종하고 있던 우주해적 소녀 아이다 레이헌턴에게 무언가를 느끼는 벨리. 그것은 본 적도 없는 G-셀프 자체에 대해서도 마찬가지였다. 그리고 특정 조건을 충족하지 않으면 움직이지 않는 G-셀프를 벨리는 가동시켜 버린다.
+                        <br /><br />
+                        캐피털 타워를 습격하는 우주해적과 아이다의 목적. G-셀프를 선택한 벨리가 걷게 될 운명. 그 끝에 기다릴 리길드 센추리 전체를 뒤흔들 진상이었다.
+                        <br /><br />
+                    </p>
+
+                </div>
+               
+                
+            </div>
+        </article>
+
+        <article id="art_5">
+            <h1># 5. Fade in/out using jquery</h1>
+            <label for="toggleBox">show</label>
+            <input type="checkbox" id="toggleBox" />
+            <div class="is_hidden">
+                <input type="button" value="Fade in" id="btn" />
+
+                <div id="box">
+                    <p>
+                        우주 이민과 우주 전쟁의 역사가 시작된 우주세기 종식 후 장시간의 시간이 흘렀다. 새로운 시대, 리길드 센추리(R.C)를 맞게 된 인류의 조화와 번영은 평화와 더불어 이대로 계속되어 나가는 것이라고 여겨지게 되었다.
+                        <br /><br />
+                        때는 바야흐로 R.C 1014년.
+                        <br /><br />
+                        지상에서 우뚝 솟은 지구와 우주를 잇는 궤도 엘리베이터 캐피털 타워. 지구상의 에너지원인 포톤 배터리를 우주보다 더 많이 가지고 있기에 신성시되는 곳이다. 그 캐피털 타워를 수호하기 위해 조직된 캐피털 가드의 생도 벨리 제남은 처음 실습 중에 어느 나라의 기술도 아닌 고성능 모빌슈트 G-셀프의 습격을 받게 된다.
+                        <br /><br />
+                        작업용 모빌슈트로 교전한 벨리는 G-셀프 포획에 성공한다. 그러나 G-셀프를 조종하고 있던 우주해적 소녀 아이다 레이헌턴에게 무언가를 느끼는 벨리. 그것은 본 적도 없는 G-셀프 자체에 대해서도 마찬가지였다. 그리고 특정 조건을 충족하지 않으면 움직이지 않는 G-셀프를 벨리는 가동시켜 버린다.
+                        <br /><br />
+                        캐피털 타워를 습격하는 우주해적과 아이다의 목적. G-셀프를 선택한 벨리가 걷게 될 운명. 그 끝에 기다릴 리길드 센추리 전체를 뒤흔들 진상이었다.
+                        <br /><br />
+                    </p>
+
+                </div>
+               
+                
+            </div>
+        </article>
+
+        <article id="art_6">
+            <h1># 6. Slide toggle using jquery</h1>
+            <label for="toggleBox">show</label>
+            <input type="checkbox" id="toggleBox" />
+            <div class="is_hidden">
+                <input type="button" value="Fade in" id="btn" />
+
+                <div id="box">
+                    <p>
+                        우주 이민과 우주 전쟁의 역사가 시작된 우주세기 종식 후 장시간의 시간이 흘렀다. 새로운 시대, 리길드 센추리(R.C)를 맞게 된 인류의 조화와 번영은 평화와 더불어 이대로 계속되어 나가는 것이라고 여겨지게 되었다.
+                        <br /><br />
+                        때는 바야흐로 R.C 1014년.
+                        <br /><br />
+                        지상에서 우뚝 솟은 지구와 우주를 잇는 궤도 엘리베이터 캐피털 타워. 지구상의 에너지원인 포톤 배터리를 우주보다 더 많이 가지고 있기에 신성시되는 곳이다. 그 캐피털 타워를 수호하기 위해 조직된 캐피털 가드의 생도 벨리 제남은 처음 실습 중에 어느 나라의 기술도 아닌 고성능 모빌슈트 G-셀프의 습격을 받게 된다.
+                        <br /><br />
+                        작업용 모빌슈트로 교전한 벨리는 G-셀프 포획에 성공한다. 그러나 G-셀프를 조종하고 있던 우주해적 소녀 아이다 레이헌턴에게 무언가를 느끼는 벨리. 그것은 본 적도 없는 G-셀프 자체에 대해서도 마찬가지였다. 그리고 특정 조건을 충족하지 않으면 움직이지 않는 G-셀프를 벨리는 가동시켜 버린다.
+                        <br /><br />
+                        캐피털 타워를 습격하는 우주해적과 아이다의 목적. G-셀프를 선택한 벨리가 걷게 될 운명. 그 끝에 기다릴 리길드 센추리 전체를 뒤흔들 진상이었다.
+                        <br /><br />
+                    </p>
+
+                </div>
+               
+                
+            </div>
+        </article>
+
+        <article id="art_7">
+            <h1># 7. Animate using jquery</h1>
+            <label for="toggleBox">show</label>
+            <input type="checkbox" id="toggleBox" />
+            <div class="is_hidden">
+                <h2> Click follow element</h2>
+                <div id="box">
+                    <p>
+                        우주 이민과 우주 전쟁의 역사가 시작된 우주세기 종식 후 장시간의 시간이 흘렀다. 새로운 시대, 리길드 센추리(R.C)를 맞게 된 인류의 조화와 번영은 평화와 더불어 이대로 계속되어 나가는 것이라고 여겨지게 되었다.
+                        <br /><br />
+                        때는 바야흐로 R.C 1014년.
+                        <br /><br />
+                        지상에서 우뚝 솟은 지구와 우주를 잇는 궤도 엘리베이터 캐피털 타워. 지구상의 에너지원인 포톤 배터리를 우주보다 더 많이 가지고 있기에 신성시되는 곳이다. 그 캐피털 타워를 수호하기 위해 조직된 캐피털 가드의 생도 벨리 제남은 처음 실습 중에 어느 나라의 기술도 아닌 고성능 모빌슈트 G-셀프의 습격을 받게 된다.
+                        <br /><br />
+                        작업용 모빌슈트로 교전한 벨리는 G-셀프 포획에 성공한다. 그러나 G-셀프를 조종하고 있던 우주해적 소녀 아이다 레이헌턴에게 무언가를 느끼는 벨리. 그것은 본 적도 없는 G-셀프 자체에 대해서도 마찬가지였다. 그리고 특정 조건을 충족하지 않으면 움직이지 않는 G-셀프를 벨리는 가동시켜 버린다.
+                        <br /><br />
+                        캐피털 타워를 습격하는 우주해적과 아이다의 목적. G-셀프를 선택한 벨리가 걷게 될 운명. 그 끝에 기다릴 리길드 센추리 전체를 뒤흔들 진상이었다.
+                        <br /><br />
+                    </p>
+
+                </div>
+            </div>
+        </article>
+
+        <article id="art_8">
+            <h1># 8. Animate 2 using jquery</h1>
+            <label for="toggleBox">show</label>
+            <input type="checkbox" id="toggleBox" />
+            <div class="ishidden">
+                <h2> Click follow element</h2>
+                <div id="box">
+                    <p>
+                        우주 이민과 우주 전쟁의 역사가 시작된 우주세기 종식 후 장시간의 시간이 흘렀다. 새로운 시대, 리길드 센추리(R.C)를 맞게 된 인류의 조화와 번영은 평화와 더불어 이대로 계속되어 나가는 것이라고 여겨지게 되었다.
+                        <br /><br />
+                        때는 바야흐로 R.C 1014년.
+                        <br /><br />
+                        지상에서 우뚝 솟은 지구와 우주를 잇는 궤도 엘리베이터 캐피털 타워. 지구상의 에너지원인 포톤 배터리를 우주보다 더 많이 가지고 있기에 신성시되는 곳이다. 그 캐피털 타워를 수호하기 위해 조직된 캐피털 가드의 생도 벨리 제남은 처음 실습 중에 어느 나라의 기술도 아닌 고성능 모빌슈트 G-셀프의 습격을 받게 된다.
+                        <br /><br />
+                        작업용 모빌슈트로 교전한 벨리는 G-셀프 포획에 성공한다. 그러나 G-셀프를 조종하고 있던 우주해적 소녀 아이다 레이헌턴에게 무언가를 느끼는 벨리. 그것은 본 적도 없는 G-셀프 자체에 대해서도 마찬가지였다. 그리고 특정 조건을 충족하지 않으면 움직이지 않는 G-셀프를 벨리는 가동시켜 버린다.
+                        <br /><br />
+                        캐피털 타워를 습격하는 우주해적과 아이다의 목적. G-셀프를 선택한 벨리가 걷게 될 운명. 그 끝에 기다릴 리길드 센추리 전체를 뒤흔들 진상이었다.
+                        <br /><br />
+                    </p>
+
+                </div>
+            </div>
+        </article>
+        
+    </section>
+    
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+        crossorigin="anonymous"></script>
+    <script>
+
+        // # 1. Radio using jquery
+        $( function() {
+
+            let rdos = $("#art_1").find(":radio");
+
+            // alert( rdos.length + " / " + rdos[0].value );
+
+            $( rdos[ rdos.length-1 ] ).prop( "checked", true );
+
+            // 마지막에 있는 radio 버튼 다음에 있는 element 검색
+            // Case 01.
+            // alert( $( rdos ).next().text() );
+
+            // Case 02.
+            // alert( $( rdos[ rdos.length-1] ).next().text() );
+            
+            // Case 03. relace innerText
+            $( rdos ).next().text( "private!!");
+        });
+
+        // # 2. Select All using jquery
+        // let rows = $( "#art_2 #table tbody" ).find( ":checkbox" );
+        $( function () {
+            let rows = $( "#art_2 #table tbody input:checkbox" );
+    
+            $( "#art_2 #all" ).bind( "click", function() {
+                if( this.checked ) {
+                    rows.prop( "checked", true );
+                    $(this).next().html("선택해제");
+                } else {
+                    rows.prop( "checked", false );
+                    $(this).next().html("전체선택");
+                }
+            });
+    
+            // Case 01.
+            // 이미 D.O.M 을 가져온 상태에서 재진입하는 것에 대한고려 필요함.
+            // rows.each( function() {
+            //     $(this).bind( "click", function() {
+            //         // $(this).change( function() {
+            //             if( $( "#art_2 #all" ).prop( "checked" )  ) {
+            //             // console.log( this.checked );
+            //             if( !this.checked ) {
+            //                 $( "#art_2 #all" ).prop( "checked", false );
+            //                 $( "#art_2 #all" ).next().html("전체선택");
+            //                 // rows.prop( "checked", false );
+            //             } 
+            //         } else {
+            //             if( this.checked ) {
+            //                 $( "#art_2 #all" ).prop( "checked", true );
+            //                 // $( "#art_2 #all" ).next().html("선택해제");
+            //                 // rows.prop( "checked", true );
+            //             }
+            //         }
+            //     });
+            // });
+            
+            // Case 02.
+            $( "#art_2 #table tbody input:checkbox" ).bind( "click", function(){
+                let chk = true;
+                let txt = "선택해제";
+    
+                for( let idx=0; idx < rows.length; idx++ ) {
+                    if( !rows.eq( idx ).is( ":checked" ) ) {
+                        chk = false;
+                        txt = "전체선택";
+                        break;
+                    }
+                }
+    
+                $( "#art_2 #all" ).prop( "checked", chk );
+                $( "#art_2 #all" ).next().html( txt );
+            });
+        });
+
+        // # 2. # 3. `.eq()` method using jquery
+        $( function() {
+            $( "#art_3 div div" ).eq(0).css( "color", "red" );
+            var chk = true;
+            
+            // Case 01.
+            $( "#art_3 #btn" ).bind( "click", function() {
+
+                if( chk ) {
+                    $( "#art_3 div div" ).eq(1).children().css( "color", "#00f" ).addClass("test");
+                    $(this).text( "Release" );
+                    // 아래의 code 는 input type button 에서만 가능
+                    // $(this).val( "Release" );
+
+                } else {
+                    $( "#art_3 div div" ).eq(1).children().css( "color", "#000" ).removeClass("test");
+                    $(this).text( "Apply" );
+                }
+
+                chk = !chk;
+            });
+
+            // Case 02.
+            // $( "#art_3 #btn" ).bind( "click", function() {
+            //     if( $(this).text() == "Apply" ) {
+            //         $( "#art_3 div div" ).eq(1).children().css( "color", "#00f" );
+            //         $(this).text( "Release" );
+            //     } else {
+            //         $( "#art_3 div div" ).eq(1).children().css( "color", "#000" );
+            //         $(this).text( "Apply" );
+
+            //     }
+            // });
+        });
+
+        // # 4. hidden using jquery
+        $( function() {
+            $( "#art_4 #btn" ).bind( "click", function() {
+
+                console.log( $( "art_4 #box").is( ":hidden" )? "Hide":"Show" );
+                
+                // Case 01.
+                $(this).val( $( "art_4 #box").is( ":hidden" )? "Hide":"Show" );
+
+                if( $( "#art_4 #box").css( "display" ) == "block" ) {
+                    $( "#art_4 #box").hide( 300 );
+                }
+                else {
+                    $( "#art_4 #box").show( 300 );
+                }
+
+                // Case 02. `toggle()`
+                // $( "#art_4 #box" ).toggle( 300 );
+
+            } );
+        });
+
+        // # 5. Fade in/out using jquery
+        $( function() {
+            var chk = true;
+            $( "#art_5 #btn" ).bind( "click", function() {
+                
+                // Case 01.
+                if( chk ) {
+                    $( "#art_5 #box").fadeTo( 500, 0.0 );
+                    $( this ).val( "Fade Out");
+                }
+                else {
+                    $( "#art_5 #box").fadeTo( 500, 1 );
+                    $( this ).val( "Fade In");
+                }
+                
+                chk = !chk;
+                
+                
+            } );
+        });
+        
+        // # 6. slide Toggle using jquery
+        $( function() {
+            var chk = true;
+            $( "#art_6 #btn" ).bind( "click", function() {
+
+                // Case 01.
+                if( chk ) {
+                    $( "#art_6 #box").slideToggle( 500 );
+                    $( this ).val( "Slide Toggle");
+                }
+                else {
+                    $( "#art_6 #box").slideToggle( 500 );
+                    $( this ).val( "Toggle out");
+                }
+
+                chk = !chk;
+
+
+            } );
+        });
+        
+        // # 7. Animate using jquery
+        $( function() {
+
+            $( "#art_7 #box" ).bind( "click", function() {
+                $(this).css( "position", "relative" );
+                $(this).animate( { top:500, left:0 }, 1000, function() {
+                    $(this).fadeTo( 500, 0 );
+                });
+            } );
+        });
+
+        // # 8. Animate using jquery
+        $( function() {
+
+            $( "#art_8 #box" ).bind( "click", function() {
+                $(this).css( "position", "relative" );
+                // $(this).animate( { top:0, left:'80%' }, 1000, function() {
+                $(this).animate( { top:0, left:$(window).width()-$(this).width() }, 1000, function() {
+                    $(this).fadeTo( 500,0 );
+                });
+            } );
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#box{
+		width: 400px;
+		height: 200px;
+		border:2px solid black;
+	}
+</style>
+</head>
+<body>
+	<h1>과목</h1>
+	<button type="button" id="btn">확인</button>
+	
+	<ul>
+		<li>JavaScript</li>
+		<li>ActionScript</li>
+		<li>NodeJS</li>
+		<li>jQuery</li>
+	</ul>
+	<ul>
+		<li>C언어</li>
+		<li>자바</li>
+		<li>파이썬</li>
+	</ul>
+	
+	<div id="box"></div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script>
+	$(function(){
+		
+		//아이디가 btn인 요소에 클릭이벤트 적용
+		$("#btn").bind("click", function(){
+			
+			let str = "";//문자열 저장할 곳
+			
+			let ar = $("li");
+			$(ar[1]).css("color","red");
+			for(let i = 0; i<ar.length; i++){
+				
+				//6번째 li에게만 color를 green으로 적용한다. 나머지는 모두 blue!
+				/*if(i == 5)
+					$(ar[i]).css("color","green");
+				else
+					$(ar[i]).css("color","blue");*/
+					
+				$(ar[i]).css("color","blue");	
+			}//for의 끝
+			
+			ar.eq(5).css("color","green");
+		});
+	});
+</script>
+</body>
+</html>
+
+
+
+
+
+
+

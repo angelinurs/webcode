@@ -24,6 +24,23 @@
 				content: "hide";
 
 			}
+
+			table.table01 th, table.table01 td {
+				border: 1px solid #dedede;
+				padding: 4px;
+
+				background-color: cadetblue;
+			}
+
+			table.table01 caption {
+				text-indent: -9999px;
+				height: 0;
+			}
+
+			table.table01>thead>tr:first-child td {
+				border: none;
+				text-align: right;
+			}
 		</style>
 	</head>
 	<body>
@@ -140,18 +157,85 @@
 								<option value="GT">BentlyGT</option>
 								<option value="porche">Porche Italia</option>
 							</select>
-	
 						</form>
 						<br />
-	
 						<div id="switch_box" class="box"></div>
 
 					</div>
 
 				</article>
+
+				<article>
+					<h1># 7. table add row 1</h1>
+					<label for="toggleBox">show</label>
+					<input type="checkbox" id="toggleBox" />
+					<div class="is_hidden">
+						<table id="table" class="table table01">
+							<caption>행 추가 테이블</caption>
+							<thead>
+								<tr >
+									<td colspan="3">
+										<button type="button" onclick="add_row();">추가</button>
+									</td>
+								</tr>
+								<tr>
+									<th>번호</th>
+									<th>이름</th>
+									<th>연락처</th>
+								</tr>
+							</thead>
+							<tbody></tbody>
+						</table>
+					</div>
+				</article>
+
+				<article id="art8">
+					<h1># 8. table add row 2</h1>
+					<label for="toggleBox">show</label>
+					<input type="checkbox" id="toggleBox" />
+					<div class="is_hidden">
+							<label for="user_name" id="user_name_label">이름</label>
+						<input type="text" id="user_name" name="user_name" />
+						<br />
+						<label for="u_phone" id="u_phone_label">연락처</label>
+						<input type="text" id="u_phone" name="u_phone" />
+						<br />
+						
+						<table id="table_2" class="table table01">
+							<caption>행 추가 테이블</caption>
+							<thead>
+								<tr >
+									<td colspan="4">
+										<button type="button" onclick="add_row2();">추가</button>
+									</td>
+								</tr>
+								<tr>
+									<th>번호</th>
+									<th>이름</th>
+									<th>연락처</th>
+									<th>선택</th>
+								</tr>
+							</thead>
+							<tbody></tbody>
+						</table>
+					</div>
+				</article>
+				
+				<article>
+					<h1># 9. Regular expression</h1>
+					<label for="toggleBox">show</label>
+					<input type="checkbox" id="toggleBox" />
+					<div class="is_hidden">
+						<form action="" name="frm_2">
+							<label for="v1">값1:</label>
+							<input type="text1" id="v1" name="v1" />
+							<button type="button" onclick="excute_fct();">Confirm</button>
+						</form>
+					</div>
+				</article>
 				
 			</section>
-
+			
 		</div>
 
 		<script>
@@ -271,13 +355,13 @@
 					case 1:
 						msg = "웃는 아이";
 						break;
-						case 2:
-							msg = "안 웃는 아이";
-							break;
-							case 3:
-								msg = "하나도 안 웃는 아이";
-								break;
-							}
+					case 2:
+						msg = "안 웃는 아이";
+						break;
+					case 3:
+						msg = "하나도 안 웃는 아이";
+						break;
+				}
 
 				document.getElementById("switch_box").innerHTML = msg;
 
@@ -285,6 +369,143 @@
 				// alert( items.elements[ idx ].innerText );
 				alert( items[idx].innerText );
 			};
+
+			let count = 0;
+			let add_row = function() {
+				// 추가 button 을 누를 때마다 call
+
+				// table 에 추가할 행( row )을 만든다.
+				let str = '<tr><td></td><td></td><td></td><tr>';
+
+				// 위위 내용을 table 의 tbody 에 html code로 넣어준다.
+
+				let table = document.getElementById("table");
+
+				let tbody = table.children.item(2);
+				
+				// Case 01. append text type
+				// tbody.innerHTML += str;
+				
+				// Case 02. append node type
+				// let tr = document.createElement( "tr" );
+				// let td1 = document.createElement( "td" );
+				// let td2 = document.createElement( "td" );
+				// let td3 = document.createElement( "td" );
+				
+				
+				// tr.appendChild( td1 );
+				// tr.appendChild( td2 );
+				// tr.appendChild( td3 );
+				
+				// tbody.appendChild( tr );
+				
+				// Case 03. append clone node type
+				let tr = document.createElement( "tr" );
+				let td = document.createElement( "td" );
+				
+				tr.appendChild( td );
+				tr.appendChild( td.cloneNode( false ) );
+				tr.appendChild( td.cloneNode( false ) );
+				
+				tbody.appendChild( tr );
+
+				// Case 04
+				// let row = tbody.insertRow();
+				// let cell1 = row.insertCell();
+				// let cell2 = row.insertCell();
+				// let cell3 = row.insertCell();
+			};
+
+			let table = document.getElementById( "table_2" );
+			let add_row2 = function() {
+				let user_name = document.getElementById( "user_name" );
+				let user_phone = document.getElementById( "u_phone" );
+				
+				// alert( user_no.value + ", " + user_name.value + ", " + user_phone.value );
+
+				
+				let td1 = document.createElement( "td" );
+				let td2 = td1.cloneNode(false);
+				let td3 = td1.cloneNode(false);
+				let td4 = td1.cloneNode(false);
+				
+				td1.innerText = count++;
+				td2.innerText = user_name.value;
+				td3.innerText = user_phone.value;
+
+				// Case 01. plain text add
+				// td4.innerHTML = '<input type="button" value="삭제" id="delete_row" onClick="delete_row( this );">';
+
+				// Case 02. create node add
+				let btn = document.createElement( "input" );
+				btn.type = "button";
+				btn.value = "삭제";
+			    btn.id = "btn_" + count;
+				btn.onclick = function() {
+					// Case 01. remove this
+					// this.parentElement.parentElement.remove();
+
+					// Case 02. remove element
+					// tr.remove();
+
+					// Case 03. remove element by table rowIdx
+					table.deleteRow( table.rowIdx );
+
+				}
+
+				td4.appendChild( btn );
+				
+				let tr = document.createElement( "tr" );
+
+				tr.onmouseover = function() {
+					table.rowIdx = this.rowIndex;
+
+					// alert( this.rowIndex );
+
+				};
+				
+				tr.style.textAlign = "center"
+
+				let tbody = document.getElementById( "table_2" ).children.item(2);
+
+				tr.appendChild( td1 );
+				tr.appendChild( td2 );
+				tr.appendChild( td3 );
+				tr.appendChild( td4 );
+
+				tbody.appendChild( tr );
+			}
+
+			let delete_row = function( elem ) {
+				elem.parentElement.parentElement.remove();
+
+			}
+
+			function excute_fct() {
+				let text = document.getElementById( "v1" ).value;
+				let text2 = document.frm_2.v1.value;
+				let text3 = document.forms.namedItem("frm_2").v1.value;
+
+				// alert( text + "\n" + text2 + "\n" + text3 );
+
+				// alert( my_trim( text ) );
+
+				let trimedText = my_trim( text );
+
+				if( trimedText.length < 1 ) {
+					alert( "input any text" );
+					return;
+				}
+
+				document.forms.namedItem("frm_2").v1.value = trimedText;
+			}
+
+			function my_trim( text ) {
+				// ref site 
+				// :: https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+				// return text.replace(  /^\s+|\s+|\s+$/g, "" );
+				return text.replace(  /\s+/g, "" );
+			}
 		</script>
 	</body>
 </html>

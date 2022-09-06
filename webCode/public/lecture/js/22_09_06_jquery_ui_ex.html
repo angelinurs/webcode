@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <style>
+        div.is_hidden {
+            display: none;
+        }
+        
+        input[type=checkbox]:checked + .is_hidden {
+            display: block;
+            transition-duration: 1s;
+        }
+    </style>
+    
+</head>
+<body>
+    <section>
+        <article id="art_1">
+            <table id="table_ex" class="table_ex">
+                <thead>
+                    <tr>
+                        <th>번호</th>
+                        <th>이름</th>
+                        <th>
+                            <label for="g1" id="g1_l">Group 1
+                            </label>
+                            <input type="checkbox" name="g1" id="g1" class="th"/>
+                        </th>
+                        <th>
+                            <label for="g2" id="g2_l">Group 2
+                                <input type="checkbox" name="g2" id="g2" class="th" />
+                            </label>
+                        </th>
+                        <th>
+                            <label for="g3" id="g3_l">Group 3
+                                <input type="checkbox" name="g3" id="g3" class="th" />
+                            </label>
+                        </th>
+                        <th>
+                            <label for="g4" id="g4_l">Group 4
+                                <input type="checkbox" name="g4" id="g4" class="th" />
+                            </label>
+                        </th>
+                        <th>
+                            <label for="g5" id="g5_l">Group 5
+                                <input type="checkbox" name="g5" id="g5" class="th" />
+                            </label>
+                        </th>
+                        <th>비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- row content -->
+                </tbody>
+            </table>
+            
+        </article>
+        
+    </section>
+
+    <!-- jquery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+        crossorigin="anonymous"></script>
+    <!-- jQuery UI CDN -->
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" 
+        integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" 
+        crossorigin="anonymous"></script>
+
+    <script>
+        let names = [ '파이리', '꼬부기', '리자몽', '피카츄' ]; 
+        
+        $( function() {
+            // draw tbody
+            let count = 0;
+            var size = names.length
+            while( count < size ) {
+
+                $("tbody").append( $row = $("<tr></tr") );
+                $row.append( $cell = $( "<td></td>" ) );
+                $cell.text( ++count );
+                $row.append( $cell = $( "<td></td>" ) );
+                $cell.text( names.shift() );
+    
+                for( var idx = 1; idx < 6; idx++ ) {
+                    $row.append( $cell = $( "<td></td>" ) );
+                    $cell.css( { 'text-align': 'center' } );
+                    $cell.append( $input = $( "<input></input>" ) );
+                    $input.prop( {
+                        type: "checkbox",
+                        id: "g"+idx+idx,
+                        name: "g"+idx+idx,
+                        class: "g_chk"
+                    });
+                }
+    
+                $row.append( $cell = $( "<td></td>" ) );
+                $cell.text( '' );
+            }
+
+            $( "table.table_ex thead input" ).checkboxradio();
+
+            // $( "input.th" ).bind( "click", function() {
+            $( "table.table_ex thead input:checkbox" ).bind( "click", function() {
+                let sig = $(this).prop('id');
+                let pre_sig = sig.substring( 0, 1 );
+                let post_sig = sig.substring( 1, 2 );
+                
+                // console.log( pre_sig + post_sig + post_sig );
+
+                let vChecklines = $( 'input[id='+sig + post_sig+']' );
+
+                vChecklines.prop( "checked", ( this.checked )? true: false );
+            });
+
+            $( "tbody>tr>td>input" ).bind( "click", function() {
+                // find parent node
+                let th_1 = $(this).parent();
+                // find closed element
+                let th_2 = $(this).closest('table');
+                console.log( th_1 );
+                // 해당 element 가 위치해있는 순번
+                console.log( $( "tbody>tr>td>input" ).index( this ) );
+                console.log( th_2 );
+                
+                if( !$(this).is( ":checked" ) ) {
+                    var th_input_id = $(this).prop( "id" ).substring(0,2); 
+
+                    elem_id = '#'+th_input_id;
+
+                    console.log( elem_id );
+
+                    console.log( $( elem_id ).prop( "checked" ) );
+                    $( elem_id ).prop( "checked", false );
+                    console.log( $( elem_id ).is( ":checked" ) );
+                }
+            } );
+
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <style>
+        div.is_hidden {
+            display: none;
+        }
+        
+        input[type=checkbox]:checked + .is_hidden {
+            display: block;
+            transition-duration: 1s;
+        }
+
+        #myVideo {
+            border: 4px solid #000;
+            border-radius: 7px;
+        }
+
+        #box{
+            width: 200px;
+            height: 150px;
+            padding: 10px;
+            border: 1px solid #000;
+            position: absolute;
+            top: 120px;
+            left: 300px;
+            display: none;
+        }
+        #btn_area {
+            text-align: center;
+        }
+
+        #b_date {
+            border: 1px solid darkseagreen;
+            border-radius: 5px;
+            padding: 8px;
+
+        }
+
+        .w500 { width: 500px; }
+        .w600 { width: 600px; }
+        .w700 { width: 700px; }
+
+        /* div#accordion {
+            height: 40px;
+            line-height: 20px;
+        } */
+    </style>
+    
+</head>
+<body>
+    <section>
+        <article id="art_1">
+            <h1># 1. draggable in jQueryUI</h1>
+            <label for="toggleBox">show</label>
+            <input type="checkbox" id="toggleBox" />
+            <div class="is_hidden">
+                <input type="button" value="Open" id="btn" />
+                <br /><br />
+                <img src="images/Step1.png" id="img1">
+                <div id="box">
+                    <div id="header">
+                        <h2>Title</h2>
+                        <div id="close_area">
+                            <input type="button" value="close" id="close_btn" />
+                        </div>
+                    </div>
+                    <div id="section">
+                        content
+                    </div>
+                </div>
+            </div>
+        </article>
+        
+        <article id="art_2">
+            <h1># 2. popup window in jQueryUI</h1>
+            <label for="toggleBox">show</label>
+            <input type="checkbox" id="toggleBox" />
+            <div class="is_hidden">
+                <input type="button" id="open_btn" value="Open" />
+                <div id="m_dialog" title="m_dialog">
+                    <p>Wow~!! Dialogue Box <br /> in jQueryUI</p>
+                    <div id="btn_area">
+                        <input type="button" id="ok_btn" value="Confirm" />
+                    </div>
+                </div>
+            </div>
+        </article>
+        
+        <article id="art_3">
+            <h1># 3. data picker ( calandar) in jQueryUI</h1>
+            <label for="toggleBox">show</label>
+            <input type="checkbox" id="toggleBox" />
+            <div class="is_hidden">
+                <form action="">
+                    <input type="text" id="b_date" placeholder="birth day : "/>
+                </form>
+            </div>
+        </article>
+        
+        <article id="art_4">
+            <h1># 4. button ( calandar) in jQueryUI</h1>
+            <label for="toggleBox">show</label>
+            <input type="checkbox" id="toggleBox" />
+            <div class="is_hidden">
+                <button type="button" id="b_btn_1">Button</button>
+                <input type="submit" id="b_btn_2" value="input submit" />
+                <input type="button" id="b_btn_3" value="input button" />
+                <a href="" id="b_btn_4">anchor</a>
+            </div>
+        </article>
+        
+        <article id="art_5" class="w500">
+            <h1># 5. tab in jQueryUI</h1>
+            <label for="toggleBox">show</label>
+            <input type="checkbox" id="toggleBox" />
+            <div class="is_hidden">
+                <div id="tab_b">
+                    <ul>
+                        <li><a href="#t1">First</a></li>
+                        <li><a href="#t2">Second</a></li>
+                        <li><a href="#t3">Third</a></li>
+                    </ul>
+                    <div id="t1">First tab contents</div>
+                    <div id="t2">Second tab contents</div>
+                    <div id="t3">Third tab contents</div>
+                </div>
+            </div>
+        </article>
+        
+        <article id="art_6" class="w500">
+            <h1># 6. accorion in jQueryUI</h1>
+            <label for="toggleBox">show</label>
+            <input type="checkbox" id="toggleBox" />
+            <div class="ishidden">
+                <div id="accordion">
+                    <div>First</div>
+                    <div id="t1">First tab contents</div>
+                    <div>Second</div>
+                    <div id="t2">Second tab contents</div>
+                    <div>Third</div>
+                    <div id="t3">Third tab contents</div>
+                </div>
+            </div>
+        </article>
+        
+        <article id="art_7" class="w500">
+            <h1># 7. checkbox, radio, nested label in jQueryUI</h1>
+            <label for="toggleBox">show</label>
+            <input type="checkbox" id="toggleBox" />
+            <div class="ishidden">
+                <div id="checkbox_radio" class="checkbox_radio">
+                    <!--  -->
+                    <fieldset>
+                        <legend>Radio group : City</legend>
+                        <label for="rd1" id="rd1_lbl"> New York</label>
+                        <input type="radio" name="rd1" id="rd1" />
+                        <label for="rd2" id="rd2_lbl"> Berlin</label>
+                        <input type="radio" name="rd1" id="rd2" />
+                        <label for="rd3" id="rd3_lbl"> Rome</label>
+                        <input type="radio" name="rd1" id="rd3" />
+                    </fieldset>
+                    <!--  -->
+                    <fieldset>
+                        <legend>Checkbox group : Star</legend>
+                        <label for="checkbox_1" > 1 star</label>
+                        <input type="checkbox" name="checkbox_1" id="checkbox_1" />
+                        <label for="checkbox_2" > 2 star</label>
+                        <input type="checkbox" name="checkbox_2" id="checkbox_2" />
+                        <label for="checkbox_3" > 3 star</label>
+                        <input type="checkbox" name="checkbox_3" id="checkbox_3" />
+                        <label for="checkbox_4" > 4 star</label>
+                        <input type="checkbox" name="checkbox_4" id="checkbox_4" />
+                    </fieldset>
+                    <!--  -->
+                    <fieldset>
+                        <legend>Checkbox nested label group : Star</legend>
+                        <label for="checkbox_n_1"> 1 star
+                            <input type="checkbox" name="checkbox_n_1" id="checkbox_n_1" />
+                        </label>
+                        <label for="checkbox_n_2"> 2 star
+                            <input type="checkbox" name="checkbox_n_2" id="checkbox_n_2" />
+                        </label>
+                        <label for="checkbox_n_3"> 3 star
+                            <input type="checkbox" name="checkbox_n_3" id="checkbox_n_3" />
+                        </label>
+                        <label for="checkbox_n_4"> 4 star
+                            <input type="checkbox" name="checkbox_n_4" id="checkbox_n_4" />
+                        </label>
+                    </fieldset>
+                </div>
+            </div>
+        </article>
+        
+    </section>
+
+    <!-- jquery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+        crossorigin="anonymous"></script>
+    <!-- jQuery UI CDN -->
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" 
+        integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" 
+        crossorigin="anonymous"></script>
+
+    <script>
+        $( function() {
+            $( "#art_1 #btn" ).bind( "click", function() {
+                $( "#art_1 #box" ).css({ display:"block"});
+            });
+
+            $( "#art_1 #close_btn" ).bind( "click", function() {
+                $( "#art_1 #box" ).css({ display:"none"});
+            });
+
+            $( "#art_1 #box" ).draggable();
+
+            $( "#art_1 #img1" ).draggable({axis:"x"});
+        });
+
+        $( function() {
+            // $( "#art_2 #m_dialog" ).dialog();
+
+            $( "#ok_btn" ).bind( "click", function() {
+                $( "#m_dialog" ).dialog( "close" );
+                // $( "#m_dialog" ).dialog( "destroy" );
+            });
+
+            $( "#open_btn" ).bind( "click", function() {
+                $( "#m_dialog" ).dialog( "open" );
+                // $( "#m_dialog" ).dialog( "destroy" );
+            });
+        });
+
+        $( function() {
+            // $( '#b_date' ).datepicker();
+            $( '#b_date' ).datepicker( { 
+                dayNamesMin: [ "일", "월", "화", "수", "목", "금", "토" ],
+                monthNames: [ "1 월", "2 월", "3 월", "4 월", "5 월", "6 월", "7 월", "8 월", "9 월", "10 월", "11 월", "12 월" ],
+                monthNamesShort: [ "1 월", "2 월", "3 월", "4 월", "5 월", "6 월", "7 월", "8 월", "9 월", "10 월", "11 월", "12 월" ],
+                dateFormat: "yy 년 mm 월 dd 일",
+                showMonthAfterYear: true,
+                changeYear: true,
+                changeMonth: true,
+                nextText: "다음 달",
+                prevText: "이전 달",
+                minDate: -1,
+                maxDate: "3d",
+                numberOfMonths: [2, 2]
+            } );
+        });
+
+        $( function() {
+            $( "#b_btn_1, #b_btn_2, #b_btn_3, #b_btn_4" ).button();
+
+            $( "#b_btn_1, #b_btn_2, #b_btn_3, #b_btn_4" ).bind( "click", function() {
+                
+                alert( ( $(this).text().length < 1 )? $(this).val(): $(this).text() );
+            });
+        });
+
+        $( function() {
+            $( "#tab_b" ).tabs();
+        });
+
+        $( function() {
+            $( "#accordion" ).accordion();
+        });
+
+        $( function() {
+            $("div[id=checkbox_radio] input").checkboxradio();
+        });
+    </script>
+</body>
+</html>

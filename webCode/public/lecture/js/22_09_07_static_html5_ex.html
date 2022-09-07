@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <style>
+        div.is_hidden {
+            display: none;
+        }
+        
+        input[type=checkbox]:checked + .is_hidden {
+            display: block;
+            transition-duration: 1s;
+        }
+
+        * {
+            font-size: 16px;
+            font-family: Consolas, sans-serif;
+        }
+
+
+
+        fieldset {
+            width: 400px;
+        }
+
+        legend {
+            background-color: #9cf;
+            color: #000;
+            padding: 1px 10px;
+            margin: 0;
+            height: 30px;
+            line-height: 30px;
+            border-radius: 5px;
+            border: 3px solid #000;
+            font-weight: bolder;
+        }
+        tr {
+            text-align: left;
+        }
+        tr>th>label::after{
+            text-align: right;
+            content: " : ";
+        }
+    </style>
+    
+</head>
+<body>
+    <section>
+        <article id="art_1">
+            <h1># 1. Browser storage function</h1>
+            <label for="toggleBox">show</label>
+            <input type="checkbox" id="toggleBox" />
+            <div class="ishidden">
+                <fieldset>
+                    <legend>- Browser storage function</legend>
+                    <form action="">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <label for="txt">Code name</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="txt" id="txt" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="2">
+                                        <input type="button" value="save" onclick="addData();" />
+                                        <input type="button" value="clear" onclick="clearData();" />
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </form>
+                    <div id="result">
+                        <!-- 
+                            show storage data
+                         -->
+                    </div>
+                </fieldset>
+                
+            </div>
+        </article>
+    </section>
+
+    <!-- jquery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+        crossorigin="anonymous"></script>
+
+    <script>
+        let db = getStorage();
+
+        if( db != undefined ) {
+
+            let text = "";
+            let result = document.getElementById( "result" );
+    
+            window.onload = function() {
+                initData();
+            }
+        }
+
+        function initData() {
+            text = "";
+
+            for( let idx = 0; idx < db.length; idx++) {
+                let key = db.key( idx );
+
+                text += ( key + ":"+db.getItem( key )+"<br />" );
+            }
+            result.innerHTML = text;
+        }
+
+        function addData() {
+            let code_val = document.getElementById("txt").value.trim();
+
+            db.setItem( "code007", code_val );
+            // 여러번 누적으로 저장 가능 json 과 같음.
+            // db.setItem( "code007", code_val );
+            // db.setItem( "code007", code_val );
+            // db.setItem( "code007", code_val );
+        }
+
+        function clearData() {
+            db.clear();
+        }
+
+        function getStorage() {
+            try {
+                if( window.localStorage ) {
+                    return window.localStorage;
+                }
+            } catch( e ) {
+                return undefined;
+            }
+        }
+
+    </script>
+
+    </body>
+</html>
+

@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <style>
+        div.is_hidden {
+            display: none;
+        }
+        
+        input[type=checkbox]:checked + .is_hidden {
+            display: block;
+            transition-duration: 1s;
+        }
+
+        * {
+            font-size: 16px;
+            font-family: Consolas, sans-serif;
+        }
+
+
+
+        fieldset {
+            width: 400px;
+        }
+
+        legend {
+            background-color: #9cf;
+            color: #000;
+            padding: 1px 10px;
+            margin: 0;
+            height: 30px;
+            line-height: 30px;
+            border-radius: 5px;
+            border: 3px solid #000;
+            font-weight: bolder;
+        }
+        tr {
+            text-align: left;
+        }
+        tr>th>label::after{
+            text-align: right;
+            content: " : ";
+        }
+
+        canvas {
+            border: 3px dotted #000;
+        }
+    </style>
+    
+</head>
+<body>
+    <section>
+        <article id="art_1">
+            <h1># 1. Color picker with input type</h1>
+            <label for="toggleBox">show</label>
+            <input type="checkbox" id="toggleBox" />
+            <div class="is_hidden">
+                <form action="">
+                    <fieldset>
+                        <legend>- color table</legend>
+                        <label for="cc">Color :</label>
+                        <input type="color" id="cc" name="cc" />
+
+                        <p><button type="button">Send</button></p>
+                    </fieldset>
+                </form>
+                
+            </div>
+        </article>
+
+        <article id="art_2">
+            <h1># 2. Calendar with input type</h1>
+            <label for="toggleBox">show</label>
+            <input type="checkbox" id="toggleBox" />
+            <div class="is_hidden">
+                <form action="">
+                    <label>참고 사이트</label>
+                    <a href="https://developer.mozilla.org/ko/docs/Web/HTML/Element/Input">https://developer.mozilla.org/ko/docs/Web/HTML/Element/Input</a>
+                    <fieldset>
+                        <legend> - Calendar</legend>
+                        <label for="date">Date :</label>
+                        <br />
+                        <input type="date" id="date" name="date" />
+                        <br /><br />
+                        
+                        <label for="dt">DateTime-=local :</label>
+                        <br />
+                        <input type="datetime-local" id="dt" name="dt" />
+                        <br /><br />
+                        
+                        <label for="week">Week</label>
+                        <br />
+                        <input type="week" id="week" name="week" />
+                        <br /><br />
+                        
+                        <label for="time">Time</label>
+                        <br />
+                        <input type="time" id="time" name="time" />
+                        <br /><br />
+                        
+                        <label for="email">email</label>
+                        <br />
+                        <input type="email" id="email" name="email" />
+                        <br /><br />
+                        
+                        <p><button type="submit">Send</button></p>
+                    </fieldset>
+                </form>
+                
+            </div>
+        </article>
+
+        <article id="art_3">
+            <h1># 3. parameter check with input type</h1>
+            <label for="toggleBox">show</label>
+            <input type="checkbox" id="toggleBox" />
+            <div class="is_hidden">
+                <form action="">
+                    <fieldset>
+                        <legend> - parameter check</legend>
+                        <label for="hp">homepage :</label>
+                        <input type="url" list="s_list" id="hp" name="hp" required/>
+                        <datalist id="s_list">
+                            <option value="http://www.google.com" label="Google" ></option>
+                            <option value="http://www.naver.com" label="Naver" ></option>
+                            <option value="http://www.daum.com" label="Daum" ></option>
+                        </datalist>
+    
+                        <p><button type="submit">Send</button></p>
+                    </fieldset>
+                </form>
+                
+            </div>
+        </article>
+    
+        <article id="art_4">
+            <h1># 4. Number with input type</h1>
+            <label for="toggleBox">show</label>
+            <input type="checkbox" id="toggleBox" />
+            <div class="is_hidden">
+                <form action="">
+                    <fieldset>
+                        <legend> - Number</legend>
+                        <label for="no">Number :</label>
+                        <input type="number" id="no" name="no" min="0" max="10" value="2"/>
+
+                        <p><button type="submit">Send</button></p>
+                    </fieldset>
+                </form>
+                
+                <form action="">
+                    <fieldset id="ex1">
+                        <legend> - ex1 ( make add form )</legend>
+                        <label > add :</label>
+                        <input type="number" id="no_pre" name="no_pre" min="0" max="10" value="2"/>
+                        <span>X</span>
+                        <input type="number" id="no_post" name="no_post" min="0" max="10" value="2"/>
+                        <span>=</span>
+                        <input type="text" id="no_result" name="no_result" value="" maxlength="3"/>
+
+                        <p><button type="button" id="result">send</button></p>
+                    </fieldset>
+                </form>
+
+
+                <form action="" oninput="result.value=parseInt(no_pre.value)*parseInt(no_post.value)">
+                    <fieldset id="ex2">
+                        <legend> - ex2 ( make add form )</legend>
+                        <label > add :</label>
+                        <input type="number" id="no_pre" name="no_pre" min="0" max="10" value="2"/>
+                        <span>X</span>
+                        <input type="number" id="no_post" name="no_post" min="0" max="10" value="2"/>
+                        <span>=</span>
+                        <output name="result" for="no_pre no_post"></output>
+                    </fieldset>
+                </form>
+            </div>
+        </article>
+    
+        <article id="art_5">
+            <h1># 5. Form attribute with input type</h1>
+            <label for="toggleBox">show</label>
+            <input type="checkbox" id="toggleBox" />
+            <div class="is_hidden">
+                <fieldset>
+                    <legend> - Form attribute</legend>
+                    
+                    <form action="">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th><label for="txt1">required</label></th>
+                                    <td>
+                                        <input type="text" id="txt1" name="txt1" required/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><label for="txt2">AutoFocus</label></th>
+                                    <td>
+                                        <input type="text" id="txt2" name="txt2" autofocus/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><label for="txt3">Placeholder</label></th>
+                                    <td>
+                                        <input type="text" id="txt3" name="txt3" placeholder="input..."/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><label for="txt4">Input Pattern</label></th>
+                                    <td>
+                                        <!-- 
+                                            입력을 안하면 required 가 자동 적용될 것 같지만,
+                                            그냥 넘어간다.
+                                            무조건 입력을 받을 경우, required 를 명시한다.
+                                         -->
+                                         <!-- <input type="text" id="txt4" name="txt4" pattern="[0-9][A-Z]{3}" title="1 digit 3 character"/> -->
+                                        <input type="text" id="txt4" name="txt4" pattern="[0-9][A-Z]{3}" title="1 digit 3 character" required/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><label for="txt5">File</label></th>
+                                    <td>
+                                        <input type="file" id="txt5" name="txt5" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><label for="txt6">Multiple File</label></th>
+                                    <td>
+                                        <input type="file" id="txt6" name="txt6" multiple />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><label for="txt7">Multiple File</label></th>
+                                    <td>
+                                        <input type="text" id="txt7" name="txt7" list="paper" />
+                                        <datalist id="paper">
+                                            <option value="Red">paper</option>
+                                            <option value="Green"></option>
+                                            <option value="Yellow"></option>
+                                        </datalist>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <button type="submit">submit</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </fieldset>
+            </div>
+        </article>
+    
+        <article id="art_6">
+            <h1># 6. Canvas with HTML 5</h1>
+            <label for="toggleBox">show</label>
+            <input type="checkbox" id="toggleBox" />
+            <div class="ishidden">
+                <fieldset>
+                    <legend>- Canvas</legend>
+                    <canvas id="can" width="400" height="300">
+                        현재 브라우저는 캔버스를 지원하지 않습니다.
+                    </canvas>
+                </fieldset>
+
+                <fieldset>
+                    <legend>- Canvas Ex 1</legend>
+                    <canvas id="can1" width="400" height="300">
+                        현재 브라우저는 캔버스를 지원하지 않습니다.
+                    </canvas>
+                </fieldset>
+                <br />
+                
+                <fieldset>
+                    <legend>- Canvas Ex 2</legend>
+                    <canvas id="can2" width="400" height="300">
+                        현재 브라우저는 캔버스를 지원하지 않습니다.
+                    </canvas>
+                </fieldset>
+                <br />
+                
+                <fieldset>
+                    <legend>- Canvas Arch</legend>
+                    <canvas id="can_arch" width="400" height="300">
+                        현재 브라우저는 캔버스를 지원하지 않습니다.
+                    </canvas>
+                </fieldset>
+                <br />
+                
+                <fieldset>
+                    <legend>- Canvas Font</legend>
+                    <canvas id="can_font" width="400" height="300">
+                        현재 브라우저는 캔버스를 지원하지 않습니다.
+                    </canvas>
+                </fieldset>
+                <br />
+                
+                <fieldset>
+                    <legend>- Canvas Image</legend>
+                    <canvas id="can_img" width="400" height="300">
+                        현재 브라우저는 캔버스를 지원하지 않습니다.
+                    </canvas>
+
+                    <img src="images/tree.jpg" id="img1" width="120" height="180" style="display:none" />
+                </fieldset>
+                <br />
+                
+                <fieldset>
+                    <legend>- Draw smart phone</legend>
+                    <canvas id="can_ph" width="400" height="400">
+                        현재 브라우저는 캔버스를 지원하지 않습니다.
+                    </canvas>
+
+                </fieldset>
+                <br />
+            </div>
+        </article>
+    
+    </section>
+
+    <!-- jquery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+        crossorigin="anonymous"></script>
+
+    <script>
+        $( "#result" ).bind( "click", function(){
+            $( "#no_result" ).val( $( "#no_pre" ).val() * $( "#no_post" ).val() );
+
+        });   
+    </script>
+
+    <script>   
+        // utillize Canvas
+        window.onload = function() {
+            // take Canvas Object
+            let can = document.getElementById( "can" );
+
+            // for Draw, take 2d Object
+            let ctx = can.getContext("2d");
+
+            if( ctx ) {
+                // set color
+                ctx.fillStyle = "green"; 
+                // draw rectangler x, y, w, h
+                ctx.fillRect( 10, 20, 100, 100 );
+
+                // draw border line
+                // line weight
+                ctx.lineWidth = 5;
+                ctx.strokeStyle = "rgba( 0, 0, 0, 0.4 )";
+                ctx.strokeRect( 50, 50, 100, 100 );
+            }
+
+            // follow lines -> canvas ex 1
+            let can1 = document.getElementById("can1");
+            let ctx1 = can1.getContext("2d");
+
+            if( ctx1 ) {
+                ctx1.fillStyle = "yellow";
+                ctx1.strokeStyle = "red";
+                // line weight
+                ctx1.lineWidth = 5;
+                
+                // save state
+                ctx1.save();
+                
+                ctx1.fillRect( 25, 25, 100, 125 );
+                ctx1.strokeRect( 25, 25, 100, 125 );
+                
+                ctx1.fillStyle = "blue";
+                ctx1.strokeStyle = "green";
+
+                ctx1.fillRect( 155, 25, 100, 125 );
+                ctx1.strokeRect( 155, 25, 100, 125 );
+                
+                // restore state
+                ctx1.restore();
+                
+                ctx1.fillRect( 285, 25, 100, 125 );
+                ctx1.strokeRect( 285, 25, 100, 125 );
+            }
+
+            // Draw plygon
+            let can2 = document.getElementById( "can2" );
+
+            let ctx2 = can2.getContext( "2d" );
+
+            if( ctx2 ) {
+                ctx2.strokeStyle = "blue";
+                ctx2.fillStyle = "red";
+                ctx2.lineWidth = 5;
+
+                // poly begin from each poly endpoint path
+                ctx2.beginPath();
+                ctx2.moveTo( 25, 40 );
+                ctx2.lineTo( 50, 60 );
+                ctx2.lineTo( 25, 80 );
+                
+                ctx2.stroke();
+                
+                ctx2.beginPath();
+                ctx2.moveTo( 25, 100 );
+                ctx2.lineTo( 50, 120 );
+                ctx2.lineTo( 25, 140 );
+                // `.closPath()` method 는 자동으로 도형의 모양을 끝을 맺어준다.
+                ctx2.closePath();
+                
+                ctx2.stroke();
+                
+                ctx2.beginPath();
+                ctx2.moveTo( 25, 200 );
+                ctx2.lineTo( 50, 220 );
+                ctx2.lineTo( 25, 240 );
+                ctx2.closePath();
+                ctx2.stroke();
+                ctx2.fill();
+
+            }
+
+            // canvas arch
+            // ref site ::
+            // https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/arc
+            let can_arch = document.getElementById( "can_arch" );
+            let arch_ctx = can_arch.getContext( "2d" );
+
+            if( arch_ctx ) {
+                arch_ctx.strokeStyle = "skyblue";
+                arch_ctx.fillStyle = "orange";
+                arch_ctx.lineWidth = 5;
+
+                arch_ctx.beginPath();
+                arch_ctx.arc( 150, 150, 100, Math.PI * 1.5, Math.PI * 2, false );
+                arch_ctx.stroke();
+                arch_ctx.fill();
+                
+                // 타원을 그리다가 그려진 호의 번위를 구하여 색을 칠해보자
+                let degree = 173;
+                let radiant = ( Math.PI / 180 ) * degree;
+                
+                arch_ctx.beginPath();
+                arch_ctx.arc( 300, 150, 100, 0, radiant, false );
+                arch_ctx.stroke();
+                arch_ctx.fill();
+            }
+
+            // Font view
+            let can_font = document.getElementById( "can_font" );
+            let font_ctx = can_font.getContext( "2d" );
+
+            if( font_ctx ) {
+                // Case 01.
+                let text = "Sea Lion";
+                font_ctx.fillText( text, 20, 20 );
+                
+                // Case 02.
+                font_ctx.font = "25px Georgia";
+                font_ctx.fillText( text, 20, 60 );
+                
+                // Case 03.
+                font_ctx.fillStyle = "blue";
+                font_ctx.fillText( text, 20, 100 );
+                
+                // Case 04.
+                font_ctx.font = "40px Verdana";
+                font_ctx.fillStyle = "orange";
+                font_ctx.textBaseline = "middle";
+                font_ctx.lineWidth = 5;
+                font_ctx.strokeStyle = "rgba( 0, 0, 255, 0.8 )";
+                font_ctx.fillText( text, 20, 140 );
+                
+                // Case 05.
+                font_ctx.shadowColor = "#000";
+                font_ctx.shadowOffsetX = 3;
+                font_ctx.shadowOffsetY = 3;
+                
+                font_ctx.fillStyle = "blue";
+                font_ctx.fillText( text, 20, 180 );
+                
+                // Case 06.
+                font_ctx.shadowOffsetX = 7;
+                font_ctx.shadowOffsetY = 3;
+                font_ctx.shadowBlur = 5;
+                font_ctx.fillStyle = "green";
+                font_ctx.fillText( text, 20, 220 );
+            }
+
+            // Canvas Image
+            let can_img = document.getElementById( "can_img" );
+            let img_ctx = can_img.getContext( "2d" );
+
+            if( img_ctx ) {
+                let img = document.getElementById( "img1" );
+
+                img_ctx.drawImage( img, 0, 0 );
+            }
+
+            // Draw smart phone layer
+            let can_ph = document.getElementById( "can_ph" );
+            let ph_ctx = can_ph.getContext( "2d" );
+
+            if( ph_ctx ) {
+
+                // draw border
+                ph_ctx.beginPath()
+                ph_ctx.moveTo( 100, 40 );
+
+                ph_ctx.quadraticCurveTo( 100, 20, 120, 20 );
+                
+                ph_ctx.lineTo( 280, 20 );
+                
+                ph_ctx.quadraticCurveTo( 300, 20, 300, 40 );
+                
+                ph_ctx.lineTo( 300, 360 );
+                
+                ph_ctx.quadraticCurveTo( 300, 380, 280, 380 );
+                
+                ph_ctx.lineTo( 120, 380 );
+                
+                ph_ctx.quadraticCurveTo( 100, 380, 100, 360 );
+
+                ph_ctx.closePath();
+
+                // ph_ctx.stroke();
+                
+                // 원형 그다데이션 효과 ( 왼쪽 상단에 빛을 받는 효과)
+                // 인자 ( x, y, r, x1, y1, r1 )
+                let radialGradient = ph_ctx.createRadialGradient( 120, 20, 0, 120, 20, 120 );
+
+                radialGradient.addColorStop( 0, "#555" );
+                radialGradient.addColorStop( 1, "#000" );
+
+                ph_ctx.fillStyle = radialGradient;
+
+                // 효과 지정전에 저장하기
+                ph_ctx.save();
+
+                // shadow effect
+                ph_ctx.shadowOffsetX = 6;
+                ph_ctx.shadowOffsetY = 6;
+                ph_ctx.shadowBlur = 5;
+                ph_ctx.shadowColor = "rgba( 0, 0, 0, 0.6 )";
+
+                ph_ctx.fill();
+                
+                ph_ctx.stroke();
+
+                // restore before shadow
+                ph_ctx.restore();
+
+                // Draw speaker
+                ph_ctx.strokeStyle = "#3d3d3d";
+                ph_ctx.lineWidth = 7;
+                // bellow line make each line edge  round
+                ph_ctx.lineCap = "round";
+                ph_ctx.moveTo( 170, 35 );
+                ph_ctx.lineTo( 230, 35 );
+
+                ph_ctx.stroke();
+
+                ph_ctx.closePath();
+
+                // create img element 
+                // let img = document.createElement( "img" );
+                let img = new Image();
+                img.src = "images/tree.jpg";
+
+                // img tag 를 생성했지만, body에 추가( append )
+                // image 가 load 될때, cavas 에 위치시킴
+                img.onload = function() {
+                    ph_ctx.drawImage( img, 110, 50, 180, 310 );
+                }
+
+            }
+
+        }
+
+
+    </script>
+
+    </body>
+</html>
